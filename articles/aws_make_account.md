@@ -73,7 +73,8 @@ CAPTCHAを入力して「送信」ボタンを押します。
 
 # 感想
 難易度の高いCAPTCHを3回も入力するのは結構しんどい。
-アカウント作成のオフィシャルページもわかりやすそうだ。（[https://aws.amazon.com/jp/register-flow/](https://aws.amazon.com/jp/register-flow/)）
+AWSオフィシャルのアカウント作成の説明もわかりやすそうだ。
+https://aws.amazon.com/jp/register-flow/
 
 # おすすめの次の作業
 - 作業用IAMユーザーの作成(鋭意作成中)
