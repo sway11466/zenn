@@ -33,31 +33,31 @@ CAPTCHを入力して「続行（ステップ1/5）」ボタンを押します�
 
 4. 氏名と住所をを入力します
 氏名と住所などを入力して「続行（ステップ2/5）」ボタンを押します。
-![enter captcha](/images/aws_make_account_img04.jpg)
+![enter address](/images/aws_make_account_img04.jpg)
 
 5. クレジットカードを入力します
 クレジットカード情報を入力して「続行（ステップ3/5）」ボタンを押します。
-![enter captcha](/images/aws_make_account_img05.jpg)
+![enter credit card](/images/aws_make_account_img05.jpg)
 
 6. SMSを受け取る電話番号とCAPTCHAを入力します
 SMSを受け取る電話番号とCAPTCHAを入力して「続行（ステップ4/5）」ボタンを押します。
-![enter captcha](/images/aws_make_account_img06.jpg)
+![enter mobile phone](/images/aws_make_account_img06.jpg)
 
 7. SMSで受け取ったコードを入力します
 SMSで受け取ったコードを入力して「続行（ステップ4/5）」ボタンを押します。
-![enter captcha](/images/aws_make_account_img07.jpg)
+![enter sms code](/images/aws_make_account_img07.jpg)
 
 8. サポートプランを選択します
 サポートプランを選択します。悩んだらベーシックサポートで十分です。後から変更ができます。
-![enter captcha](/images/aws_make_account_img08.jpg)
+![select support plan](/images/aws_make_account_img08.jpg)
 
 9. アカウント作成が完了です
 アカウントの作成が完了です！「AWSマネジメントコンソールにお進みください」を押します。
-![enter captcha](/images/aws_make_account_img09.jpg)
+![finish make account](/images/aws_make_account_img09.jpg)
 
 10. マネジメントコンソールにログインします
 登録に使用したEメールアドレスを入力して「次へ」ボタンを押します。
-![enter captcha](/images/aws_make_account_img10.jpg)
+![login console](/images/aws_make_account_img10.jpg)
 
 11. CAPTCHAを入力します
 CAPTCHAを入力して「送信」ボタンを押します。
@@ -65,11 +65,11 @@ CAPTCHAを入力して「送信」ボタンを押します。
 
 12. パスワードを入力します
 パスワードを入力して「サインイン」ボタンを押します。
-![enter captcha](/images/aws_make_account_img12.jpg)
+![enter password](/images/aws_make_account_img12.jpg)
 
 13. マネジメントコンソールへのログインが完了です
 無事にマネジメントコンソールを表示できました！
-![enter captcha](/images/aws_make_account_img13.jpg)
+![show console](/images/aws_make_account_img13.jpg)
 
 # 感想
 難易度の高いCAPTCHを3回も入力するのは結構しんどい。
