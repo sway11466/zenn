@@ -3,13 +3,13 @@ title: "AWSをはじめからていねいに"
 emoji: "🔰"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["AWS", "terraform", "初心者"]
-published: false
+published: true
 ---
 ていねいを心掛けたAWS記事です。スクリーンショット満載でやった気になれます。
 
 # はじめてのAWS
 1. [AWSアカウントを作る](https://zenn.dev/sway/articles/aws_make_account)
-1. 普段使いのIAMユーザーを作る(鋭意作成中)
+1. [普段使いのIAMユーザーを作る](https://zenn.dev/sway/articles/aws_biginner_create_iam_user)
 1. とにかくEC2を立ててログインする(鋭意作成中)
 1. AWS CLIでS3を操作する(鋭意作成中)
 

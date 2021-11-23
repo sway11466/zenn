@@ -77,4 +77,4 @@ AWSオフィシャルのアカウント作成の説明もわかりやすそう�
 https://aws.amazon.com/jp/register-flow/
 
 # 次はこれをやろう
-- [作業用IAMユーザーの作成](https://zenn.dev/sway/articles/aws_biginner_create_iam_user)
+- [普段使いのIAMユーザーを作る](https://zenn.dev/sway/articles/aws_biginner_create_iam_user)
