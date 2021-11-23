@@ -1,6 +1,6 @@
 ---
 title: "AWSアカウントを作る - AWSをはじめからていねいに"
-emoji: "🔰"
+emoji: "🐣"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["AWS", "AWSアカウント", "初心者"]
 published: true

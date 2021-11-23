@@ -1,6 +1,6 @@
 ---
 title: "普段使いのIAMユーザーを作る - AWSをはじめからていねいに"
-emoji: "🔰"
+emoji: "🐣"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["AWS", "IAM", "初心者"]
 published: true
