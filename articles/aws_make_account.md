@@ -1,5 +1,5 @@
 ---
-title: "AWSをはじめからていねいに - AWSアカウントを作る"
+title: "AWSアカウントを作る - AWSをはじめからていねいに"
 emoji: "🔰"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["AWS", "AWSアカウント", "初心者"]
@@ -76,5 +76,5 @@ CAPTCHAを入力して「送信」ボタンを押します。
 AWSオフィシャルのアカウント作成の説明もわかりやすそうだ。
 https://aws.amazon.com/jp/register-flow/
 
-# おすすめの次の作業
-- 作業用IAMユーザーの作成(鋭意作成中)
+# 次はこれをやろう
+- [作業用IAMユーザーの作成](https://zenn.dev/sway/articles/aws_biginner_create_iam_user)
