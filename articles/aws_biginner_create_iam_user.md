@@ -26,7 +26,6 @@ IAMユーザーでログインしてマネジメントコンソールを表示�
 1. マネジメントコンソールからIAMサービスを選択する
     マネジメントコンソールの左上の「サービス」を押すと表示されるメニューから「セキュリティ、ID、およびコンプライアンス」を選択します。表示されるサブメニューから「IAM」を選択します。
     ![select iam from menu](/images/aws_biginner_create_iam_user01.jpg)
-    ![select iam from menu](/images/aws_biginner_create_iam_user01b.jpg)
 
 2. IAMダッシュボードからユーザーを選択する
     IAMダッシュボードの左側のメニューから「▼ アクセス管理」グループの「ユーザー」を選択します。
