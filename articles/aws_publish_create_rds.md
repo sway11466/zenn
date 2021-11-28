@@ -3,7 +3,7 @@ title: "RDSデータベースを構築する - AWSをはじめからていねい
 emoji: "📒"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["AWS", "RDS", "初心者"]
-published: false
+published: true
 ---
 ていねいを心掛けたAWS記事です。スクリーンショット満載でやった気になれます。
 [AWS記事の一覧](https://zenn.dev/sway/articles/aws_index_list)
