@@ -11,7 +11,7 @@ published: true
 1. [AWSアカウントを作る](https://zenn.dev/sway/articles/aws_make_account)
 1. [普段使いのIAMユーザーを作る](https://zenn.dev/sway/articles/aws_biginner_create_iam_user)
 1. [とにかくEC2を立ててログインする](https://zenn.dev/sway/articles/aws_biginner_create_ec2)
-1. AWS CLIでS3を操作する(鋭意作成中)
+1. [AWS CLIでS3を操作する](https://zenn.dev/sway/articles/aws_biginner_use_cli)
 1. AWS CLIでセッションマネージャー接続する(鋭意作成中)
 
 # AWSでWebサービスを作ろう
