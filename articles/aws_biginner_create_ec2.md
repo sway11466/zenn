@@ -180,4 +180,5 @@ EC2にセッションマネージャーで接続してechoコマンドでhello w
 セッションマネージャーの登場でSSH接続することは少なくなっていると思うので、EC2作成時のキーペアの確認は表示しないほうが初心者を不安にさせなくて良いと思いますね。
 
 # 次はこれをやろう
-- AWS CLIでS3を操作する(鋭意作成中)
+- [AWS CLIでS3を操作する](https://zenn.dev/sway/articles/aws_biginner_use_cli)
+- [RDSでデータベースを構築する](https://zenn.dev/sway/articles/aws_publish_create_rds)
