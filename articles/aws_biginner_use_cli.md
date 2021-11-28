@@ -21,7 +21,7 @@ AWS CLIでS3バケットの作成と表示を行う。
 - 費用：無料
 - 「アクセスキー・プログラムによるアクセス」が可能なIAMユーザー
 :::message
-「アクセスキー・プログラムによるアクセス」が可能なIAMユーザーが存在しない場合は「[普段使いのIAMユーザーを作る](https://zenn.dev/sway/articles/aws_biginner_create_iam_user)」の手順ししたがって作ってください。
+「アクセスキー・プログラムによるアクセス」が可能なIAMユーザーが存在しない場合は「[普段使いのIAMユーザーを作る](https://zenn.dev/sway/articles/aws_biginner_create_iam_user)」の手順を参考に作ってください。
 :::
 
 # 登場する主なコンポーネント

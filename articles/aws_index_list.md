@@ -14,9 +14,9 @@ published: true
 1. [AWS CLIでS3を操作する](https://zenn.dev/sway/articles/aws_biginner_use_cli)
 1. AWS CLIでセッションマネージャー接続する(鋭意作成中)
 
-# AWSでWebサービスを作ろう
-1. Auroraデータベースを構築する(鋭意作成中)
-1. EC2とAuroraでWordPressを動かしてみる(鋭意作成中)
+# AWSでWebサービスを公開しよう
+1. [RDSでデータベースを構築する](https://zenn.dev/sway/articles/aws_publish_create_rds)
+1. EC2とRDSでWordPressを動かしてみる(鋭意作成中)
 1. 独自ドメイン名をつけてRoute53で管理する(鋭意作成中)
 1. WAFで攻撃から守る(鋭意作成中)
 1. サービスの利用者数をCloudWatchで監視する(鋭意作成中)
@@ -38,6 +38,7 @@ published: true
 1. セキュリティグループはリソースごとに作る！(鋭意作成中)
 1. IAMロールはリソースごとに作る！(鋭意作成中)
 1. AWSセキュリティの私的ベストプラクティス(鋭意作成中)
+1. 個人的にはRDSならAurora一択
 
 # 記事の方向性を検討中のもの
 - ECS
