@@ -6,10 +6,15 @@ topics: ["AWS", "EC2", "セッションマネージャー", "初心者"]
 published: true
 ---
 ていねいを心掛けたAWS記事です。スクリーンショット満載でやった気になれます。
+[AWS記事の一覧](https://zenn.dev/sway/articles/aws_index_list)
 
 # 概要
 マネジメントコンソールでEC2を構築してセッションマネージャーで接続します。
-セッションマネージャーを使うために専用のIAMロールを作成してEC2に割り当てます。
+セッションマネージャーを使うために専用のIAMロールを作成してEC2に割り当てる必要があります。
+この記事では以下の順番で操作を行います。
+1. IAMロールの作成
+1. EC2の作成
+1. セッションマネージャーで接続
 
 # ゴール
 EC2にセッションマネージャーで接続してechoコマンドでhello worldを表示します。地味。。。
@@ -81,28 +86,28 @@ EC2にセッションマネージャーで接続してechoコマンドでhello w
 
 1. EC2ダッシュボードを表示する
     マネジメントコンソールの左上の「サービス」を押すと表示されるメニューから「コンピューティング」を選択します。表示されるサブメニューから「EC2」を選択します。
-    ![select ec2 from menu](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_10.jpg)
+    ![show EC2 dashbord](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_10.jpg)
 
-1. EC2ダッシュボードを表示する
+1. EC2インスタンス一覧んを表示する
     EC2ダッシュボード左側のメニューから「インスタンス」を選択してインスタンス一覧を表示します。
-    ![select ec2 from menu](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_11.jpg)
+    ![show EC2 list](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_11.jpg)
 
 1. EC2の作成を開始する
     右上の「インスタンスを起動」ボタンを押してEC2の作成をはじめます。
-    ![create iamrole](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_12.jpg)
+    ![start create ec2](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_12.jpg)
 
 1. マシンイメージにAmazon Linux 2 AMIを選択する
     マシンイメージの一覧から「Amazon Linux 2 AIM」を選択します。
     「Amazon Linux 2 AIM」が複数表示されている場合、リストの一番上に表示されている最新バージョンを選択します。
-    ![create iamrole](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_13.jpg)
+    ![select amazon linux2](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_13.jpg)
 
 1. インスタンスタイプに無料枠対象のt2.microを選択する
     インスタンスタイプの一覧から「t2.micro」を選択して「次のステップ：インスタンス詳細の設定」ボタンを押します。
-    ![create iamrole](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_14.jpg)
+    ![select instance type](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_14.jpg)
 
 1. IAMロールにSessionManagerRoleを設定する
     IAMロールに「SessionManagerRole」を設定して「確認と作成」ボタンを押します。
-    ![create iamrole](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_15.jpg)
+    ![select iamrole](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_15.jpg)
 
 1. 構成を確認する
     AMIが「Amazon Linux 2 AIM」になっていること、インスタンスタイプが「t2.micro」であることを確認して「起動」ボタンを押します。
@@ -112,7 +117,7 @@ EC2にセッションマネージャーで接続してechoコマンドでhello w
     しかし、起動したEC2サーバーでSSHのサービスを起動しないため、全世界のユーザーが接続して操作を行うことはできません。
     心配な気持ちを抑えて、このまま先に進みましょう。
     :::
-    ![create iamrole](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_16.jpg)
+    ![confirm ec2 create](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_16.jpg)
 
 1. キーペアは作成せずにEC2を作成する
     キーペアの使用に関するダイアログが表示されます。
@@ -121,59 +126,59 @@ EC2にセッションマネージャーで接続してechoコマンドでhello w
     ちゃんとEC2に接続できるか心配になるメッセージが表示されていますが、キーペアはSSH接続を行う場合に必要となるものです。今回の手順ではSSHは使用せずにセッションマネージャーで接続するためキーペアの作成は不要です。
     心配な気持ちを抑えて、このまま先に進みましょう。
     :::
-    ![create iamrole](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_17.jpg)
+    ![select key pair](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_17.jpg)
 
 1. インスタンスの作成が開始されたことを確認する
     「インスタンスは現在作成中です」が表示されていることを確認して「インスタンスの表示」ボタンを押します。
-    ![create iamrole](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_18.jpg)
+    ![check ec2 status](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_18.jpg)
 
 1. 一覧に作成したEC2があることを確認する
     EC2の一覧に追加された行のインスタンスの状態が「実行中」になっていることを確認します。
-    ![check iamrole list](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_19.jpg)
+    ![check ec2 list](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_19.jpg)
 
 1. EC2に接続する
     EC2の一覧の左側のチェックボックスをチェックして「接続」ボタンを押します。
-    ![check iamrole list](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_20.jpg)
+    ![connect ec2](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_20.jpg)
 
 1. 接続方法にセッションマネージャーを選択する
     「セッションマネージャー」を選択して「接続」ボタンをおします。
-    ![check iamrole list](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_21.jpg)
+    ![select connection way](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_21.jpg)
 
 1. セッションマネージャーでコマンドを実行する
     別タブでコンソール画面が表示されます。（起動するまではAWSコンソールの画面で処理が行われます）
     ここで「echo hello world!」コマンドを入力してみましょう。
     以下画面のようにhello world!が表示されれば正常に接続できています。
-    ![check iamrole list](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_22.jpg)
+    ![exec command](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_22.jpg)
 
 1. セッションマネージャーを終了する
     「exit」コマンドを入力してセッションマネージャーを終了します。
-    ![check iamrole list](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_23.jpg)
+    ![exit session manager](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_23.jpg)
 
 1. 終了確認ダイアログを閉じる
     終了確認ダイアログが表示されるので「閉じる」ボタンを押します。
-    ![check iamrole list](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_24.jpg)
+    ![hide exit dialog](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_24.jpg)
 
 1. EC2一覧を表示する
     接続画面に戻るのでパンくずリストの「インスタンス」を選択してEC2一覧を表示します。
-    ![check iamrole list](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_25.jpg)
+    ![show ec2 list](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_25.jpg)
 
 1. 作成したEC2を停止する
     EC2の一覧の左側のチェックボックスをチェックして「インスタンスの状態」プルダウンから「インスタンスを停止」を選択します。
-    ![check iamrole list](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_26.jpg)
+    ![stop ec2](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_26.jpg)
 
 1. 確認ダイアログで停止を押す
     確認ダイアログが表示されるので「停止」ボタンを押します。
-    ![check iamrole list](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_27.jpg)
+    ![confirm dialog](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_27.jpg)
 
 1. 一覧の表示が停止中になったことを確認する
     EC2の一覧のインスタンスの状態が「停止中」となったことを確認します。
     しばらくすると「停止済み」に自動的に変わります。
-    ![check iamrole list](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_28.jpg)
+    ![check ec2 status](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_28.jpg)
 
 1. 一覧の表示が停止済みになったことを確認する
     EC2の一覧のインスタンスの状態が「停止済み」となったことを確認します。
     停止中のインスタンスは課金されません。
-    ![check iamrole list](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_29.jpg)
+    ![check ec2 status](/images/aws_biginner_create_ec2/aws_biginner_create_ec2_tutorial_29.jpg)
 
 # 感想
 セッションマネージャーの登場でEC2の構築や操作が格段に楽になりました。

@@ -6,6 +6,7 @@ topics: ["AWS", "AWSアカウント", "初心者"]
 published: true
 ---
 ていねいを心掛けたAWS記事です。スクリーンショット満載でやった気になれます。
+[AWS記事の一覧](https://zenn.dev/sway/articles/aws_index_list)
 
 # ゴール
 AWSアカウントを作成してマネジメントコンソールにログインする。
