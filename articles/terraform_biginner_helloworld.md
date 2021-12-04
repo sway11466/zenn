@@ -3,7 +3,7 @@ title: "ローカルでhello world - Terraformのきほん"
 emoji: "🐣"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["terraform", "初心者"]
-published: false
+published: true
 ---
 ていねいを心掛けたTerraform記事です。スクリーンショット満載でやった気になれます。
 [Terraform記事の一覧](https://zenn.dev/sway/articles/terraform_index_list)
@@ -14,8 +14,8 @@ Terraformのコードを書くことで、サーバー構築を自動化して�
 この記事では、ローカルファイルの作成を通してterraformのキホンを学べます。
 
 # ゴール
-terraformでローカルにhello.txtファイルを作成する。
-ファイルの中身は「hellow world!」。
+terraformでローカルにhello.txtファイルを作成します。
+ファイルの中身は「hellow world!」です。
 
 # 必要なもの
 - 作業時間：15分
@@ -39,8 +39,8 @@ terraformでローカルにhello.txtファイルを作成する。
 ![install terraform](/images/terraform_biginner_helloworld/terraform_biginner_helloworld_tutorial_02.jpg)
 
 1. Terraformの起動確認
-コマンドプロンプトを起動して、カレントディレクトリをインストールフォルダに変更し、terraformコマンドを実行します。
-以下のスクリーンショットのようにコマンドの使い方が表示されればインストールは準備完了です。
+コマンドプロンプトを起動して、カレントディレクトリをインストールフォルダに変更します。
+terraformコマンドを実行して以下のスクリーンショットのようにコマンドの使い方が表示されればインストールは完了です。
 ![exec terraform](/images/terraform_biginner_helloworld/terraform_biginner_helloworld_tutorial_03.jpg)
 
 1. ファイルを作成コードを追加する
