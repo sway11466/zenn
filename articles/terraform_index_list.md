@@ -13,12 +13,12 @@ published: true
 1. [ローカルでhello world](https://zenn.dev/sway/articles/terraform_biginner_helloworld)
 1. 最低限おさえておきたいTerraformのアーキテクチャー(鋭意作成中)
 1. モジュールの使い方(鋭意作成中)
+1. モジュールで呼び出し元に値を変規約する(鋭意作成中)
 1. ワークスペースの使い方(鋭意作成中)
 
-# TerraformでAWS
-1. TerraformでVPCなら無料で練習できる！(鋭意作成中)
-1. TerraformでEC2(鋭意作成中)
-1. TerraformでAurora(鋭意作成中)
+# Terraformのソース管理パターン
+1. 環境ごとにフォルダを分ける(鋭意作成中)
+1. 環境ごとの設定をモジュールにする(鋭意作成中)
 
 # Teraformのてっぱん
 1. Terraformバージョンを固定する
@@ -27,6 +27,7 @@ published: true
 # わたしのTeraformの書き方
 1. tfファイルはライフサイクルごとにわける(鋭意作成中)
 
-# Terraformのソース管理パターン
-1. 環境ごとにフォルダを分ける(鋭意作成中)
-1. 環境ごとの設定をモジュールにする(鋭意作成中)
+# TerraformでAWS
+1. TerraformでVPCなら無料で練習できる！(鋭意作成中)
+1. TerraformでEC2(鋭意作成中)
+1. TerraformでAurora(鋭意作成中)
