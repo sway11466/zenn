@@ -6,7 +6,9 @@ topics: ["terraform", "初心者"]
 published: true
 ---
 ていねいを心掛けたTerraform記事です。スクリーンショット満載でやった気になれます。
-[Terraform記事の一覧](https://zenn.dev/sway/articles/terraform_index_list)
+このの記事はローカルで行えるように工夫しています。クラウドを使わずに無料で学べます。
+[Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)
+
 
 # 概要
 クラウドの登場でサーバー構築が手軽になり、同じようなサーバーを何度もつくることになりました。この手間をソフトウェアによって解決してくれるのがTerraformです。
