@@ -3,10 +3,10 @@ title: "モジュールの使い方 - Terraformのきほんと応用"
 emoji: "🐣"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["terraform", "初心者"]
-published: false
+published: true
 ---
 ていねいを心掛けたTerraform記事です。スクリーンショット満載でやった気になれます。
-このの記事はローカルで行えるように工夫しています。クラウドを使わずに無料で学べます。
+このの記事はTerraformで作るリソースをローカルのみとなるように工夫しています。クラウドを使わずに無料で学べます。
 Terraform関連の他の記事は「[Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)」からどうぞ。
 
 # 概要
@@ -37,13 +37,56 @@ Terraformでは、サーバーを作成するソースコードをモジュー�
 ![use modules from multi parent](/images/terraform_biginner_modules/terraform_biginner_modules_usage_02.jpg)
 モジュールの呼び出し時にパラメーターを使うことで、ふるまいを制御することもできます。
 ![use modules with parameter](/images/terraform_biginner_modules/terraform_biginner_modules_usage_03.jpg)
+モジュールを呼び出すコードは以下のように書きます。
+```hcl
+module "リソースの名前" {
+    source = "モジュールを定義したフォルダのパス"
+    パラメーター名 = "パラメーター値"
+}
+```
 
-# モジュールの構造
-モジュールは以下の３つで成り立っています。
-1. パラメーター
-1. 本体
-1. 戻り値
-![modules structure](/images/terraform_biginner_modules/terraform_biginner_modules_structure_01.jpg)
+# モジュールの作り方
+
+1. モジュールの構造
+    モジュールは以下の３つで成り立っています。
+    1. パラメーター
+    1. 本体
+    1. 戻り値
+    ![modules structure](/images/terraform_biginner_modules/terraform_biginner_modules_structure_01.jpg)
+
+1. パラメーターを定義する
+    パラメーターを定義することにより、親から受け取った値を本体で使用することができます。
+    パラメーターは「variable」で定義します。
+    ```hcl
+    variable "parameter_name" {
+    }
+    ````
+    複数のパラメーターを定義することもできます。
+    ```hcl
+    variable "parameter_1" {
+    }
+    variable "parameter_2" {
+    }
+    ````
+
+1. パラメーターを使用する
+    パラメーターを本体で使用する場合は「var.パラメーター名」を使用します。
+    ```hcl
+    resource "リソース定義名" "リソース名" {
+        item_a = var.parameter_1
+        item_b = var.parameter_2
+    }
+    ```
+
+1. 戻り値について
+    戻り値を定義すると、モジュールを呼び出した親でその値を使用することができます。
+    戻り値は「output」で定義します。
+    ```hcl
+    output "debug_print" {
+      value = "create from module with ${var.parameter_1}."
+    }
+    ```
+    本記事では戻り値については詳細に説明しません。
 
 # モジュール化したファイル作成コードで複数のファイルを作成する
 
@@ -59,9 +102,10 @@ Terraformでは、サーバーを作成するソースコードをモジュー�
     ```
     順番にファイルを作成します。
     ```hcl:main1.tf
-    resource "local_file" "helloworld" {
-        content  = "hello world!"
-        filename = "hello.txt"
+    module "module_sample_main" {
+      source = "./modules"
+      content = "hello world!"
+      filename = "hello.txt"
     }
     ```
     ```hcl:main2.tf
