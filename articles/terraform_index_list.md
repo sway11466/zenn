@@ -12,8 +12,9 @@ published: true
 # Terraformのきほん
 1. [ローカルでhello world](https://zenn.dev/sway/articles/terraform_biginner_helloworld)
 1. 最低限おさえておきたいTerraformのアーキテクチャー(鋭意作成中)
+1. 変数の使い方(鋭意作成中)
 1. モジュールの使い方(鋭意作成中)
-1. モジュールで呼び出し元に値を変規約する(鋭意作成中)
+1. モジュールで作成したリソースを呼び元で使う(鋭意作成中)
 1. ワークスペースの使い方(鋭意作成中)
 
 # Terraformのソース管理パターン
