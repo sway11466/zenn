@@ -6,7 +6,7 @@ topics: ["AWS", "S3", "初心者"]
 published: true
 ---
 ていねいを心掛けたAWS記事です。スクリーンショット満載でやった気になれます。
-[AWS記事の一覧](https://zenn.dev/sway/articles/aws_index_list)
+AWS関連の他の記事は[AWSをはじめからていねいに](https://zenn.dev/sway/articles/aws_index_list)からどうぞ。
 
 # 概要
 AWS CLIのインストールと設定を行ってAWS操作をコマンドラインで行えるようになります。

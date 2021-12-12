@@ -6,7 +6,7 @@ topics: ["terraform", "初心者"]
 published: true
 ---
 ていねいを心掛けたTerraform記事です。スクリーンショット満載でやった気になれます。
-このの記事はTerraformで作るリソースをローカルのみとなるように工夫しています。クラウドを使わずに無料で学べます。
+Terraformといえばクラウドリソースの作成ですが、この記事ではローカルPC上のリソース作成で済むように工夫しています。
 Terraform関連の他の記事は「[Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)」からどうぞ。
 
 # 概要
