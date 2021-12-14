@@ -46,7 +46,7 @@ Trraformには2種類の変数があります。
       content  = "use local values."
       filename = "hello_local.txt"
     }
-    resource "local_file" "helloworld" {
+    resource "local_file" "local_sample" {
       content  = local.content
       filename = local.filename
     }
@@ -58,9 +58,9 @@ Trraformには2種類の変数があります。
       default = "use input variables default value."
     }
     variable filename {
-      default = "default_var.txt"
+      default = "default_input.txt"
     }
-    resource "local_file" "helloworld" {
+    resource "local_file" "input_sample" {
       content  = var.content
       filename = var.filename
     }
@@ -75,28 +75,61 @@ Trraformには2種類の変数があります。
       content  = "use local values."
       filename = "hello_local.txt"
     }
-    resource "local_file" "helloworld" {
+    resource "local_file" "local_sample" {
       content  = local.content
       filename = local.filename
     }
     ```
 
-1. plan
+1. 実行結果を事前確認する
+    実行結果を事前確認するための「plan」コマンドを実行します。ローカル変数を使用してファイルを作成できそうです。
     ![image title](/images/terraform_biginner_varliable/terraform_biginner_varliable_tutorial_01.jpg)
 
-1. apply
+1. Terraformでファイルを作成する
+    ファイルを作成するために「apply」コマンドを実行します。
+    ![image title](/images/terraform_biginner_varliable/terraform_biginner_varliable_tutorial_02.jpg)
+    ファイルが作成されています。
+    ![image title](/images/terraform_biginner_varliable/terraform_biginner_varliable_tutorial_03.jpg)
+    ファイルの中身もローカル変数で指定した通りです。
+    ![image title](/images/terraform_biginner_varliable/terraform_biginner_varliable_tutorial_04.jpg)
 
 # 入力変数を使用したファイル生成コードを作る
 
 1. terraformコード作成する
+    入力変数を使用するコードを作成します。
     ```hcl:helloworld_input.tf
+    variable content {
+      default = "use input variables default value."
+    }
+    variable filename {
+      default = "default_input.txt"
+    }
+    resource "local_file" "input_sample" {
+      content  = var.content
+      filename = var.filename
+    }
     ```
 
+1. デフォルト値での実行結果を事前確認する
+    実行結果を事前確認するための「plan」コマンドを実行します。入力変数のデフォルト値を使用してファイルを作成できそうです。
+    ![image title](/images/terraform_biginner_varliable/terraform_biginner_varliable_tutorial_05.jpg)
 
-1. plan
+1. デフォルト値でファイルを作成する
+    ファイルを作成するために「apply」コマンドを実行します。
+    ![image title](/images/terraform_biginner_varliable/terraform_biginner_varliable_tutorial_06.jpg)
+    ファイルが作成されています。
+    ![image title](/images/terraform_biginner_varliable/terraform_biginner_varliable_tutorial_07.jpg)
+    ファイルの中身もローカル変数で指定した通りです。
+    ![image title](/images/terraform_biginner_varliable/terraform_biginner_varliable_tutorial_08.jpg)
+
+1. 実行時に値を指定して事前確認する
+    入力変数の値をコマンド実行時に指定して事前確認します。指定した入力変数を使用してファイルを作成しそうです。
+    ![image title](/images/terraform_biginner_varliable/terraform_biginner_varliable_tutorial_09.jpg)
 
 1. apply
-
+    ![image title](/images/terraform_biginner_varliable/terraform_biginner_varliable_tutorial_10.jpg)
+    ![image title](/images/terraform_biginner_varliable/terraform_biginner_varliable_tutorial_11.jpg)
+    ![image title](/images/terraform_biginner_varliable/terraform_biginner_varliable_tutorial_12.jpg)
 
 # サンプルコード
 この記事で作成したコードはgithub上に公開しています。
