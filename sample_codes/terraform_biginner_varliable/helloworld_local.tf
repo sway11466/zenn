@@ -1,8 +1,7 @@
 locals {
-  content  = "use local variables."
+  content  = "use local values."
   filename = "hello_local.txt"
 }
-
 resource "local_file" "helloworld" {
   content  = local.content
   filename = local.filename
