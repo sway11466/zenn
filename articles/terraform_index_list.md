@@ -12,7 +12,7 @@ Terraformといえばクラウドリソースの作成ですが、「Terraform�
 # Terraformのきほん
 1. [ローカルでhello world](https://zenn.dev/sway/articles/terraform_biginner_helloworld)
 1. 最低限おさえておきたいTerraformのアーキテクチャー(鋭意作成中)
-1. 変数の使い方(鋭意作成中)
+1. [変数の使い方](https://zenn.dev/sway/articles/terraform_biginner_varliable)
 1. [モジュールの使い方](https://zenn.dev/sway/articles/terraform_biginner_modules)
 1. ワークスペースの使い方(鋭意作成中)
 

@@ -93,3 +93,4 @@ terraformコマンドを実行して以下のスクリーンショットのよ�
 
 # 次はこれをやろう
 - 最低限おさえておきたいTerraformのアーキテクチャー(鋭意作成中)
+- [変数の使い方](https://zenn.dev/sway/articles/terraform_biginner_varliable)
