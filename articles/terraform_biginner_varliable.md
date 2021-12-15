@@ -3,7 +3,7 @@ title: "変数の使い方 - Terraformのきほんと応用"
 emoji: "🐣"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["terraform", "初心者"]
-published: false
+published: true
 ---
 ていねいを心掛けたTerraform記事です。スクリーンショット満載でやった気になれます。
 Terraformといえばクラウドリソースの作成ですが、この記事ではローカルPC上のリソース作成で済むように工夫しています。
@@ -66,7 +66,7 @@ Terraformには2種類の変数があります。
     }
     ```
 
-# ローカル変数を使用したファイル生成コードを作る
+# ローカル変数を使用してファイルを作る
 
 1. terraformコード作成する
     ローカル変数を使用するコードを作成します。
@@ -93,7 +93,7 @@ Terraformには2種類の変数があります。
     ファイルの中身もローカル変数で指定した通りです。
     ![image title](/images/terraform_biginner_varliable/terraform_biginner_varliable_tutorial_04.jpg)
 
-# 入力変数を使用したファイル生成コードを作る
+# 入力変数を使用してファイルを作る
 
 1. terraformコード作成する
     入力変数を使用するコードを作成します。
