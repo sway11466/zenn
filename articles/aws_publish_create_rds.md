@@ -161,4 +161,6 @@ EC2からMySQLに接続してデータベースの一覧を表示します。
 Auroraの無料枠作ってくれないかな。。。
 
 # 次はこれをやろう
-- EC2とRDSでWordPressを動かしてみる(鋭意作成中)
+- [EC2にApacheをインストールしてブラウザで表示する](https://zenn.dev/sway/articles/aws_publish_apache)
+
+AWS関連の他の記事は[AWSをはじめからていねいに](https://zenn.dev/sway/articles/aws_index_list)からどうぞ。
