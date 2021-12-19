@@ -3,7 +3,7 @@ title: "EC2にApacheをインストールしてブラウザで表示する - AWS
 emoji: "🐣"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["tags"]
-published: false
+published: true
 ---
 ていねいを心掛けたAWS記事です。スクリーンショット満載でやった気になれます。
 AWS関連の他の記事は[AWSをはじめからていねいに](https://zenn.dev/sway/articles/aws_index_list)からどうぞ。
@@ -13,12 +13,12 @@ EC2でWebサービスを公開するにはApacheなどのWebサーバーをイ�
 この記事では、Apacheのインストールとセキュリティグループの設定を行ってブラウザからEC2にアクセスする流れを説明します。
 
 # ゴール
-EC2にインストールしたApacheをブラウザから表示する。
+EC2にインストールしたApacheをブラウザで表示する。
 ![image title](/images/aws_publish_apache/aws_publish_apache_goal.jpg)
 
 # 必要なもの
 - 作業時間：15分
-- 構築にかかる費用：無料※
+- 費用：無料※
     :::message
     EC2の無料枠の使用を想定しています。AWSアカウント作成から12カ月以内の場合は無料です。無料枠がない場合は5円ぐらいかかります。
     :::
@@ -59,11 +59,10 @@ EC2にインストールしたApacheをブラウザから表示する。
     ```
     curl http://localhost | head
     ```
-    以下のようにhtmlが変規約されれば正常に起動しています。
+    以下のようにhtmlソースが表示されれば正常に起動しています。
     ![test apache form local](/images/aws_publish_apache/aws_publish_apache_tutorial_03.jpg)
 
-1. 接続するためのURLを調べる
-    ブラウザで接続するためのURLをEC2の設定で確認します。
+1. ブラウザ接続するためのURLを調べる
     EC2ダッシュボードでインスタンスを選択すると詳細欄が表示されるので、この中からパブリックIPv4 DNSの部分のURLをブラウザで表示します。「オープンアドレス」の部分のリンクをクリックすることで別タブで表示されます。
     ![get ec2 url](/images/aws_publish_apache/aws_publish_apache_tutorial_04.jpg)
 
