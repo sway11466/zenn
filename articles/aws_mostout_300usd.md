@@ -1,0 +1,41 @@
+---
+title: "個人利用でも300USD無料クレジットを使おう - AWSをはじめからていねいに"
+emoji: "🐣"
+type: "tech" # tech: 技術記事 / idea: アイデア
+topics: ["AWS"]
+published: false
+---
+ていねいを心掛けたAWS記事です。スクリーンショット満載でやった気になれます。
+AWS関連の他の記事は[AWSをはじめからていねいに](https://zenn.dev/sway/articles/aws_index_list)からどうぞ。
+
+# 概要
+記事で説明すること
+作業の流れ
+理由
+
+# ゴール
+ゴールの状態
+
+# 必要なもの
+- 作業時間：xx分
+- 費用：xx円
+
+# 登場する主なコンポーネント
+記事を理解するのに必要な技術要素を説明する
+
+# 作業手順
+
+## サブタイトル
+
+1. 実施すること
+直前の操作の後の状態
+操作手順の説明
+操作後の状態
+![image title](/images/[article_title]/[article_title]_tutorial_00.jpg)
+
+# サンプルコード
+この記事で作成したコードはgithub上に公開しています。
+@[card](https://github.com/sway11466/zenn/tree/main/sample_codes/[article_title]])
+
+# 次はこれをやろう
+- [次の記事のタイトル](https://zenn.dev/sway/articles/)
