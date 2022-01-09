@@ -2,7 +2,7 @@
 title: "EC2にApacheをインストールしてブラウザで表示する - AWSをはじめからていねいに"
 emoji: "📒"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["tags"]
+topics: ["AWS", "Apache"]
 published: true
 ---
 ていねいを心掛けたAWS記事です。スクリーンショット満載でやった気になれます。
