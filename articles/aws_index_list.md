@@ -21,7 +21,7 @@ published: true
 前半は無料枠のみで進められますが、後半は費用が発生するサービスを使っています。費用がかかる場合は月次費用の見積を記事内に書いています。
 1. [RDSでデータベースを構築する](https://zenn.dev/sway/articles/aws_publish_create_rds)
 1. [EC2にApacheをインストールしてブラウザで表示する](https://zenn.dev/sway/articles/aws_publish_apache)
-1. EC2とRDSでWordPressを動かしてみる(鋭意作成中)
+1. [EC2とRDSでWordPressを動かしてみる](https://zenn.dev/sway/articles/aws_publish_wordpress)
 1. 独自ドメイン名をつけてRoute53で管理する(鋭意作成中)
 1. WAFで攻撃から守る(鋭意作成中)
 1. サービスの利用者数をCloudWatchで監視する(鋭意作成中)
@@ -40,7 +40,10 @@ published: true
 1. セキュリティグループはリソースごとに作る！(鋭意作成中)
 1. IAMロールはリソースごとに作る！(鋭意作成中)
 1. AWSセキュリティの私的ベストプラクティス(鋭意作成中)
-1. 個人的にはRDSならAurora一択
+1. 個人的にはRDSならAurora一択(鋭意作成中)
+
+# AWSを使い倒す
+1. 個人利用でも300USD無料クレジットを使おう(鋭意作成中)
 
 # 記事の方向性を検討中のもの
 - ECS
