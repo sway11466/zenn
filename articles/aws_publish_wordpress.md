@@ -3,7 +3,7 @@ title: "EC2とRDSでWordPressを動かしてみる - AWSをはじめからてい
 emoji: "📒"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["AWS", "Apache", "RDS", "WordPress"]
-published: false
+published: true
 ---
 ていねいを心掛けたAWS記事です。スクリーンショット満載でやった気になれます。
 AWS関連の他の記事は[AWSをはじめからていねいに](https://zenn.dev/sway/articles/aws_index_list)からどうぞ。
@@ -62,6 +62,9 @@ Wordpressを実行するためのPHPをインストールします。
 1. 作業ディレクトリを変更する
     セッションマネージャーで接続している場合はカレントディレクトリが /usr/bin になっているのでホームディレクトリに変更します。
     Linuxでは ~（チルダ） がホームディレクトリを表します。
+    ```
+    cd ~
+    ```
     ![image title](/images/aws_publish_wordpress/aws_publish_wordpress_tutorial_04.jpg)
 
 1. WordPressをダウンロードする
