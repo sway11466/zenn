@@ -22,7 +22,7 @@ published: true
 1. [RDSでデータベースを構築する](https://zenn.dev/sway/articles/aws_publish_create_rds)
 1. [EC2にApacheをインストールしてブラウザで表示する](https://zenn.dev/sway/articles/aws_publish_apache)
 1. [EC2とRDSでWordPressを動かしてみる](https://zenn.dev/sway/articles/aws_publish_wordpress)
-1. 独自ドメイン名をつけてRoute53で管理する(鋭意作成中)
+1. [独自ドメイン名でサーバーを公開する](https://zenn.dev/sway/articles/aws_publish_original_domain)
 1. WAFで攻撃から守る(鋭意作成中)
 1. サービスの利用者数をCloudWatchで監視する(鋭意作成中)
 
