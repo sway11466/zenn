@@ -111,3 +111,5 @@ AWS CLIでS3バケットの作成と表示を行う。
 
 # 次はこれをやろう
 - AWS CLIでセッションマネージャー接続する(鋭意作成中)
+
+AWS関連の他の記事は[AWSをはじめからていねいに](https://zenn.dev/sway/articles/aws_index_list)からどうぞ。

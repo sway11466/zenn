@@ -187,3 +187,5 @@ EC2にセッションマネージャーで接続してechoコマンドでhello w
 # 次はこれをやろう
 - [AWS CLIでS3を操作する](https://zenn.dev/sway/articles/aws_biginner_use_cli)
 - [RDSでデータベースを構築する](https://zenn.dev/sway/articles/aws_publish_create_rds)
+
+AWS関連の他の記事は[AWSをはじめからていねいに](https://zenn.dev/sway/articles/aws_index_list)からどうぞ。

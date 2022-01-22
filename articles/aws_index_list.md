@@ -18,13 +18,16 @@ published: true
 1. 利用料金を毎日通知する(鋭意作成中)
 
 # AWSでWebサービスを公開しよう
-前半は無料枠のみで進められますが、後半は費用が発生するサービスを使っています。費用がかかる場合は月次費用の見積を記事内に書いています。
+No.3でWordPressを動かすまで無料枠のみで進められますが、No.4のドメイン名でのサーバーから費用が発生します。費用が発生するサービスも実践向きなものは構築手順をスクリーンショット満載でお届けします。
 1. [RDSでデータベースを構築する](https://zenn.dev/sway/articles/aws_publish_create_rds)
 1. [EC2にApacheをインストールしてブラウザで表示する](https://zenn.dev/sway/articles/aws_publish_apache)
 1. [EC2とRDSでWordPressを動かしてみる](https://zenn.dev/sway/articles/aws_publish_wordpress)
 1. [独自ドメイン名でサーバーを公開する](https://zenn.dev/sway/articles/aws_publish_original_domain)
+1. ALB配下でEC2を動かす(鋭意作成中)
+1. サーバーダウンを検知する(鋭意作成中)
 1. WAFで攻撃から守る(鋭意作成中)
 1. サービスの利用者数をCloudWatchで監視する(鋭意作成中)
+- 番外編 EC2を再起動してWordPressの表示がおかしくなったら(鋭意作成中)
 
 # ていねいに理解するAWS
 1. インフラ管理はペットから家畜へ(鋭意作成中)
