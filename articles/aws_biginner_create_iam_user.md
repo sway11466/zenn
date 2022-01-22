@@ -87,3 +87,5 @@ IAMユーザーでログインしてマネジメントコンソールを表示�
 
 # 次はこれをやろう
 - [とにかくEC2を立ててログインする](https://zenn.dev/sway/articles/aws_biginner_create_ec2)
+
+AWS関連の他の記事は[AWSをはじめからていねいに](https://zenn.dev/sway/articles/aws_index_list)からどうぞ。

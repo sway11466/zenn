@@ -79,3 +79,5 @@ https://aws.amazon.com/jp/register-flow/
 
 # 次はこれをやろう
 - [普段使いのIAMユーザーを作る](https://zenn.dev/sway/articles/aws_biginner_create_iam_user)
+
+AWS関連の他の記事は[AWSをはじめからていねいに](https://zenn.dev/sway/articles/aws_index_list)からどうぞ。
