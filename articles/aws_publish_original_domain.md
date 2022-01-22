@@ -3,7 +3,7 @@ title: "独自ドメイン名でサーバーを公開する - AWSをはじめか
 emoji: "📒"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["AWS", "Route53", "独自ドメイン"]
-published: false
+published: true
 ---
 ていねいを心掛けたAWS記事です。スクリーンショット満載でやった気になれます。
 AWS関連の他の記事は[AWSをはじめからていねいに](https://zenn.dev/sway/articles/aws_index_list)からどうぞ。
@@ -22,13 +22,13 @@ Route53での以下設定を行います。
 - 作業時間：60分
 - 構築にかかる費用：1000円～
     :::message
-    ドメイン名の取得に費用が発生します。ドメインの種類によって費用は異なりますが、comドメインの場合は年間1500円程度かかります。
+    ドメイン名の取得に費用が発生します。ドメインの種類によって金額は異なりますが、comドメインの場合は年間1500円程度かかります。
     :::
 - 運用にかかる費用：1000円～／年
     :::message
     EC2とRDSは無料枠の使用を想定しています。AWSアカウント作成から12カ月以内の場合は無料です。無料枠がない場合は構築費で10円ぐらい、毎月5000円ぐらいかかります。
-    これとは別に、ドメイン維持とRoute53に費用が必要となります。また、以下のAWSの見積りにはドメイン費用が含まれていません。この見積費用とは別に年間ドメイン維持費用がかかります。
-    [参考見積はこちら](https://calculator.aws/#/estimate?id=fda9cc07f21451dc185620c25912fdf314ffba4b)
+    これとは別に、ドメイン維持とRoute53に費用が必要となります。
+    [参考見積はこちら（注：ドメイン維持費用を含んでいません）](https://calculator.aws/#/estimate?id=c92163a82fef05c3da2a7ed365e44b00c14474af)
     :::
 - WordPressが動作しているEC2
     :::message
@@ -42,7 +42,7 @@ Route53での以下設定を行います。
     AWSのフルマネージドなDNSサービスです。SLA100%を誇るサービスです。すごい。
 
 1. ホストゾーン
-    Route53で管理する１つのドメインをホストゾーンと呼びます。この手順では sway11466.com のドメインを取得してホストゾーンとします。
+    Route53で管理する１つのドメインをホストゾーンと呼びます。Route53でドメインを取得するとホストゾーンが自動作成されます。
 
 # ドメイン名の取得とEC2の割り当て手順
 
@@ -81,12 +81,12 @@ Route53での以下設定を行います。
     登録したメールアドレスの認証が15日以内に必要となる旨の説明が表示されるので「同意します」ボタンを押します。
     ![image title](/images/aws_publish_original_domain/aws_publish_original_domain_tutorial_08.jpg)
 
-1. 認証用のメールを受信する
-    「同意します」ボタンを押すと入力したメールアドレスに以下のようなメールが届きます。このメールのリンクを押してメールアドレス認証を行います。
+1. Eメール認証を行う
+    「同意します」ボタンを押すと以下のようなメールが届きます。このメールのリンクを押してメールアドレス認証を行います。
     ![image title](/images/aws_publish_original_domain/aws_publish_original_domain_tutorial_09.jpg)
 
-1. Eメール認証を行う
-    メールのリンクを押すと以下のような画面に変わってメール認証が完了します。AWSコンソールに戻って次の操作に進みます。
+1. Eメール認証結果を確認する
+    メールのリンクを押すと以下のような画面に変わってメール認証は完了です。AWSコンソールに戻って次の操作に進みます。
     ![image title](/images/aws_publish_original_domain/aws_publish_original_domain_tutorial_10.jpg)
 
 1. Eメール認証のステータスを更新する
@@ -106,10 +106,11 @@ Route53での以下設定を行います。
     ![image title](/images/aws_publish_original_domain/aws_publish_original_domain_tutorial_14.jpg)
 
 1. ドメインが登録されたことを確認する
-    ダッシュボードの左側のメニューから「登録済のドメイン」を選択します。先ほど注文したドメインが登録されていることを確認します。
+    ダッシュボードの左側のメニューから「登録済のドメイン」を選択します。先ほど購入したドメインが登録されていることを確認します。
     ![image title](/images/aws_publish_original_domain/aws_publish_original_domain_tutorial_15.jpg)
 
 ## EC2のIPアドレスを確認する
+購入したドメインに割り当てるEC2のIPアドレスを調べます。
 
 1. インスタンスの一覧を表示する
     EC2ダッシュボードの左側のメニューから「インスタンス」を選択します。
@@ -140,6 +141,7 @@ Route53での以下設定を行います。
     |----------------|--------------------------------------|
     | レコードタイプ  | A - IPv4アドレスと一部のAWSリソースに…  |
     | 値             | 公開したいEC2のパブリックIPv4アドレス    |
+    上記以外の項目はデフォルト値のままで進めます。
     ![image title](/images/aws_publish_original_domain/aws_publish_original_domain_tutorial_22.jpg)
 
 1. 登録したレコード情報を確認する
@@ -153,7 +155,7 @@ Route53での以下設定を行います。
     ![image title](/images/aws_publish_original_domain/aws_publish_original_domain_tutorial_24.jpg)
 
 # 注意点
-この手順によりドメイン名でEC2にインストールしたWordPressを表示できるようになりました。
+この手順を行うとドメイン名でEC2にインストールしたWordPressを表示できるようになります。
 しかし、EC2の再起動を行うとアクセスできなくなってしまうはずです。これは、EC2は再起動するごとにグローバルIPv4アドレスが変わってしまうためです。
 このため、以下などの対応を行うことになりますが、これらは別の記事で説明します。
 - グローバルIPアドレスが変わるたびにAレコードの値を変更する
