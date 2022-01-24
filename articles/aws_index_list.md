@@ -1,6 +1,6 @@
 ---
 title: "AWSをはじめからていねいに"
-emoji: "🐣"
+emoji: "📑"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["AWS", "初心者"]
 published: true

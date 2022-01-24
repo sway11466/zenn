@@ -1,6 +1,6 @@
 ---
 title: "Terraformのきほんと応用"
-emoji: "🐣"
+emoji: "📑"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["terraform", "初心者"]
 published: true
@@ -15,12 +15,14 @@ Terraformといえばクラウドリソースの作成ですが、「Terraform�
 1. [変数の使い方](https://zenn.dev/sway/articles/terraform_biginner_varliable)
 1. [モジュールの使い方](https://zenn.dev/sway/articles/terraform_biginner_modules)
 1. ワークスペースの使い方(鋭意作成中)
+1. 公式モジュール(Terraform Registory)の使い方(鋭意作成中)
 
 # Terraformのソース管理パターン
 1. 環境ごとにフォルダを分ける(鋭意作成中)
 1. 環境ごとの設定をモジュールにする(鋭意作成中)
 
 # Teraformのてっぱん
+Terraformを使うなら当たり前レベルのプラクティス。
 1. Terraformバージョンを固定する
 1. tfstateはS3などの共有ストレージに保存する(鋭意作成中)
 
@@ -34,5 +36,6 @@ Terraformといえばクラウドリソースの作成ですが、「Terraform�
 1. TerraformでEC2(鋭意作成中)
 1. TerraformでAurora(鋭意作成中)
 
-# Terraform
-1. ALB+EC2+RDSでWordPressを公開する
+# Terraformコードベース
+ひな形となるソースコード群とその説明記事です。
+1. ALB+EC2+RDSでWordPressを公開する(鋭意作成中)
