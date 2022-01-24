@@ -24,10 +24,14 @@ Terraformといえばクラウドリソースの作成ですが、「Terraform�
 1. Terraformバージョンを固定する
 1. tfstateはS3などの共有ストレージに保存する(鋭意作成中)
 
-# わたしのTeraformの書き方
+# 私的Teraformの書き方
+1. [variable.tfとoutputs.tfを分けない](https://zenn.dev/sway/articles/terraform_style_onefile.md)
 1. tfファイルはリソースのライフサイクルごとにわける(鋭意作成中)
 
 # TerraformでAWS
 1. TerraformでVPCなら無料で練習できる！(鋭意作成中)
 1. TerraformでEC2(鋭意作成中)
 1. TerraformでAurora(鋭意作成中)
+
+# Terraform
+1. ALB+EC2+RDSでWordPressを公開する
