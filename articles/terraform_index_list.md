@@ -17,19 +17,19 @@ Terraformといえばクラウドリソースの作成ですが、「Terraform�
 1. ワークスペースの使い方(鋭意作成中)
 1. 公式モジュール(Terraform Registory)の使い方(鋭意作成中)
 
-# Terraformのソース管理パターン
-1. 環境ごとにフォルダを分ける(鋭意作成中)
-1. 環境ごとの設定をモジュールにする(鋭意作成中)
-
 # Teraformのてっぱん
-Terraformを使うなら当たり前レベルのプラクティス。
-1. Terraformバージョンを固定する
+Terraformを使う全ての人が実践すべき内容について説明します。
+1. [Terraformバージョンを固定する](https://zenn.dev/sway/articles/terraform_staple_fixversion)
 1. tfstateはS3などの共有ストレージに保存する(鋭意作成中)
 
 # 私的Teraformの書き方
-一般的なプラクティスと異なる部分もあります。また、考えが変わることもあるので同じ記事を継続的に更新します。
+私が好むTerraformの書き方です。一般的なプラクティスと異なる部分もあります。
 1. [variable.tfとoutputs.tfを分けない](https://zenn.dev/sway/articles/terraform_style_onefile.md)
 1. tfファイルはリソースのライフサイクルごとにわける(鋭意作成中)
+
+# Terraformのソース管理パターン
+1. 環境ごとにフォルダを分ける(鋭意作成中)
+1. 環境ごとの設定をモジュールにする(鋭意作成中)
 
 # TerraformでAWS
 1. TerraformでVPCなら無料で練習できる！(鋭意作成中)
