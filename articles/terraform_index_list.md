@@ -25,6 +25,7 @@ Terraformといえばクラウドリソースの作成ですが、「Terraform�
 1. tfstateはS3などの共有ストレージに保存する(鋭意作成中)
 
 # 私的Teraformの書き方
+一般的なプラクティスと異なる部分もあります。また、考えが変わることもあるので同じ記事を継続的に更新します。
 1. [variable.tfとoutputs.tfを分けない](https://zenn.dev/sway/articles/terraform_style_onefile.md)
 1. tfファイルはリソースのライフサイクルごとにわける(鋭意作成中)
 
