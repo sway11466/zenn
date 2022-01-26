@@ -56,6 +56,6 @@ terraform {
 :::
 
 # 次はこれをやろう
-- tfstateはS3などの共有ストレージに保存する(鋭意作成中)
+- [tfstateはS3などの共有ストレージに保存する](https://zenn.dev/sway/articles/terraform_staple_sharestate)
 
 Terraform関連の他の記事は「[Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)」からどうぞ。

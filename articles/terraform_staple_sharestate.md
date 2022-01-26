@@ -3,7 +3,7 @@ title: "tfstateはS3などの共有ストレージに保存する - Terraformの
 emoji: "⚓"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["terraform"]
-published: false
+published: true
 ---
 Terraformを使う全ての人が実践すべき内容について説明します。
 Terraform関連の他の記事は「[Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)」からどうぞ。
@@ -17,7 +17,7 @@ tfstateファイルは共有ストレージに保存する（gitではない）�
 # 説明
 
 ## 共有ストレージに作成するべき理由
-Terraformは構築状態をtfstateファイルに保存します。tfstateファイルは特に指定がなければローカルファイルとして作成されます。複数人で開発するとtfstateファイルの整合性がとれなくなって破綻してしまいます。
+Terraformは構築状態をtfstateファイルに保存します。tfstateファイルは指定がなければローカルファイルとして作成されます。このため、複数人で開発すると各自のtfstateファイルの整合性がとれなくなって破綻してしまいます。
 では、tfstateをソースと同様にgitで管理するのはどうでしょうか？うまくいきそうな気もしますが、tfstateが競合してマージが必要になった場合を考えてみましょう。。。無理ですね。
 tfstateはS3などの共有ストレージに保存しましょう。
 
@@ -37,7 +37,7 @@ terraform {
   }
 }
 ```
-S3を使う場合は以下の設定で構築するのが良いでしょう。
+S3は以下の設定で構築するのが良いでしょう。
 ・パブリックアクセスを無効にする
 ・バージョニングを有効にする
 
@@ -49,7 +49,7 @@ tfstate用S3をCLIで作成するスクリプトを作ってみました。[(tfs
 - [put-bucket-versioning](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/put-bucket-versioning.html)
 
 引数にバケット名指定して実行します。
-```cmd:
+```
 create_tfstate_storage_s3.bat sway-tfstate-share-bucket
 ```
 正常にバケットが作成できた場合は以下のような出力となります。
