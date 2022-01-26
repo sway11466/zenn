@@ -2,7 +2,7 @@
 title: "tfstateはS3などの共有ストレージに保存する - Terraformのきほんと応用"
 emoji: "⚓"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["tags"]
+topics: ["terraform"]
 published: false
 ---
 Terraformを使う全ての人が実践すべき内容について説明します。
@@ -23,13 +23,11 @@ tfstateはS3などの共有ストレージに保存しましょう。
 
 ## tfstate用共有ストレージをterraformで作らない理由
 せっかくTerraformを使うのだからtfstateを管理する共有ストレージもTerraformで作りたくなります。が、この共有ストレージは別の方法で作成するのが良いでしょう。
-- そのtfstateはどうするの問題
-- 誤操作怖い
-- どのみち1way
-- 
+Teraformで共有ストレージを作ると、そのtfstateをどのように管理すべきかという問題が永久に発生することになります。
 
 ## tfstateをS3に置く方法
-terraformセクションのbackendセクションに"s3"を設定します。
+AWSを使用する場合はtfstateをS3で管理するための機能が用意されています。
+ソース内のterraformセクションのbackendセクションに"s3"を設定するだけです。
 ```hcl:main.tf
 terraform {
   backend "s3" {
@@ -39,20 +37,22 @@ terraform {
   }
 }
 ```
-S3に置く場合は以下の設定を推奨します。
+S3を使う場合は以下の設定で構築するのが良いでしょう。
 ・パブリックアクセスを無効にする
 ・バージョニングを有効にする
 
 ## tfstate用S3作成スクリプト
-CLIで以下3つのAPIを実行する
-- create
-- acl
-- history
-これらを実行するバッチファイルを準備しました。バケット名をパラメーターとして以下のように使用できます。
+tfstate用S3をCLIで作成するスクリプトを作ってみました。[(tfstate用S3作成スクリプト)](https://github.com/sway11466/zenn/tree/main/sample_codes/terraform_staple_sharestate/create_tfstate_storage_s3.bat)
+スクリプトでは以下3つのAPIを実行しています。
+- [create-bucket](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/create-bucket.html)
+- [put-public-access-block](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/put-public-access-block.html)
+- [put-bucket-versioning](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/put-bucket-versioning.html)
+
+引数にバケット名指定して実行します。
 ```cmd:
 create_tfstate_storage_s3.bat sway-tfstate-share-bucket
 ```
-正常に動くと以下のようなります。
+正常にバケットが作成できた場合は以下のような出力となります。
 ![version error exsample](/images/terraform_staple_sharestate/terraform_staple_sharestate_desc_01.jpg)
 
 # サンプルコード
@@ -61,4 +61,5 @@ create_tfstate_storage_s3.bat sway-tfstate-share-bucket
 
 # 次はこれをやろう
 - tfstateのロック機能を使う(鋭意作成中)
+
 Terraform関連の他の記事は「[Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)」からどうぞ。
