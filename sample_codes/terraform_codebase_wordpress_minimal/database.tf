@@ -6,17 +6,18 @@
 #  rds instance
 #   - 停止中に差分が出ないようにstatusの変更を無視する
 resource "aws_db_instance" "wordpress" {
-  identifier           = "${local.env}-wordpress"
-  engine               = local.rds.engine
-  engine_version       = local.rds.version
-  instance_class       = local.rds.instance
-  allocated_storage    = 20
-  username             = local.rds.username
-  password             = local.rds.password
-  name                 = "wordpressdb"
-  parameter_group_name = local.rds.parameter
-  db_subnet_group_name = aws_db_subnet_group.wordpress_db.name
-  skip_final_snapshot  = true
+  identifier             = "${local.env}-wordpress"
+  engine                 = local.rds.engine
+  engine_version         = local.rds.version
+  instance_class         = local.rds.instance
+  allocated_storage      = 20
+  username               = local.rds.username
+  password               = local.rds.password
+  name                   = "wordpressdb"
+  parameter_group_name   = local.rds.parameter
+  db_subnet_group_name   = aws_db_subnet_group.wordpress_db.name
+  vpc_security_group_ids = [aws_security_group.wordpress_db.id]
+  skip_final_snapshot    = true
   tags = {
     Name        = "${local.env}-wordpress"
     Environment = local.env

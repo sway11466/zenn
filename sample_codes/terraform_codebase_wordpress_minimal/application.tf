@@ -5,17 +5,17 @@
 # --------------------------------
 #  alb
 resource "aws_lb" "wordpress" {
-  name                       = "${local.env}-wordpress"
-  load_balancer_type         = "application"
-  internal                   = false
-  idle_timeout               = 60
+  name               = "${local.env}-wordpress"
+  load_balancer_type = "application"
+  internal           = false
+  idle_timeout       = 60
   subnets = [
     aws_subnet.application_alb_1a.id,
     aws_subnet.application_alb_1c.id,
     aws_subnet.application_alb_1d.id
   ]
   security_groups = [aws_security_group.wordpress_alb.id]
-  #access log
+  #todo access log
   tags = {
     Name        = "${local.env}-wordpress"
     Environment = local.env
@@ -27,6 +27,10 @@ resource "aws_lb" "wordpress" {
       tags["CreatedOn"]
     ]
   }
+}
+
+output "access_url" {
+  value = "http://${aws_lb.wordpress.dns_name}"
 }
 
 # --------------------------------
@@ -62,17 +66,28 @@ resource "aws_lb_target_group" "wordpress" {
   deregistration_delay = "10"
   health_check {
     protocol            = "HTTP"
-    path                = "/"
+    path                = "/readme.html"
     port                = 80
     healthy_threshold   = 5
     unhealthy_threshold = 2
-    timeout             = 5
-    interval            = 10
+    timeout             = 2
+    interval            = 5
     matcher             = 200
+  }
+  tags = {
+    Name        = "${local.env}-wordpress"
+    Environment = local.env
+    CreatedBy   = "Terraform"
+    CreatedOn   = timestamp()
+  }
+  lifecycle {
+    ignore_changes = [
+      tags["CreatedOn"]
+    ]
   }
 }
 
-resource "aws_lb_target_group_attachment" "myinstance" {
+resource "aws_lb_target_group_attachment" "wordpress-targetgroup-attach" {
   target_group_arn = aws_lb_target_group.wordpress.arn
   target_id        = aws_instance.wordpress.id
   port             = 80
@@ -83,15 +98,23 @@ resource "aws_lb_target_group_attachment" "myinstance" {
 resource "aws_instance" "wordpress" {
   ami           = local.application.ami
   instance_type = local.application.instance_type
-  ebs_block_device {
-    device_name = "/dev/xvda"
-    volume_type = "gp3"
-    volume_size = 20
+  root_block_device {
+    volume_size           = 10
+    volume_type           = "gp3"
+    iops                  = 3000
+    throughput            = 125
+    delete_on_termination = true
+    tags = {
+      Name        = "${local.env}-wordpress"
+      Environment = local.env
+      CreatedBy   = "Terraform"
+    }
   }
   subnet_id                   = aws_subnet.application_ec2.id
   associate_public_ip_address = "true"
   vpc_security_group_ids      = [aws_security_group.wordpress_ec2.id]
-  #user_data                   = file("./userdata/cloud-init.tpl")
+  iam_instance_profile        = aws_iam_instance_profile.wordpress_ec2.name
+  user_data                   = file("./application_ec2_userdata.sh")
   tags = {
     Name        = "${local.env}-wordpress"
     Environment = local.env
@@ -108,9 +131,10 @@ resource "aws_instance" "wordpress" {
 # --------------------------------
 #  subnet
 resource "aws_subnet" "application_ec2" {
-  vpc_id            = aws_vpc.main.id
-  availability_zone = "ap-northeast-1d"
-  cidr_block        = local.application.cider_subnet_1a_ec2
+  vpc_id                  = aws_vpc.main.id
+  availability_zone       = "ap-northeast-1d"
+  cidr_block              = local.application.cider_subnet_1a_ec2
+  map_public_ip_on_launch = true
   tags = {
     Name        = "${local.env}-application-ec2"
     Environment = local.env
@@ -122,6 +146,11 @@ resource "aws_subnet" "application_ec2" {
       tags["CreatedOn"]
     ]
   }
+}
+
+resource "aws_route_table_association" "application_ec2" {
+  subnet_id      = aws_subnet.application_ec2.id
+  route_table_id = aws_route_table.main.id
 }
 
 resource "aws_subnet" "application_alb_1a" {
@@ -141,6 +170,11 @@ resource "aws_subnet" "application_alb_1a" {
   }
 }
 
+resource "aws_route_table_association" "application_alb_1a" {
+  subnet_id      = aws_subnet.application_alb_1a.id
+  route_table_id = aws_route_table.main.id
+}
+
 resource "aws_subnet" "application_alb_1c" {
   vpc_id            = aws_vpc.main.id
   availability_zone = "ap-northeast-1c"
@@ -156,6 +190,11 @@ resource "aws_subnet" "application_alb_1c" {
       tags["CreatedOn"]
     ]
   }
+}
+
+resource "aws_route_table_association" "application_alb_1c" {
+  subnet_id      = aws_subnet.application_alb_1c.id
+  route_table_id = aws_route_table.main.id
 }
 
 resource "aws_subnet" "application_alb_1d" {
@@ -175,11 +214,16 @@ resource "aws_subnet" "application_alb_1d" {
   }
 }
 
+resource "aws_route_table_association" "application_alb_1d" {
+  subnet_id      = aws_subnet.application_alb_1d.id
+  route_table_id = aws_route_table.main.id
+}
+
 # --------------------------------
 #  security group
 resource "aws_security_group" "wordpress_alb" {
-  name        = "wordpress-alb"
-  vpc_id      = aws_vpc.main.id
+  name   = "wordpress-alb"
+  vpc_id = aws_vpc.main.id
   ingress {
     from_port   = 80
     to_port     = 80
@@ -206,12 +250,12 @@ resource "aws_security_group" "wordpress_alb" {
 }
 
 resource "aws_security_group" "wordpress_ec2" {
-  name        = "wordpress-alb"
-  vpc_id      = aws_vpc.main.id
+  name   = "wordpress-ec2"
+  vpc_id = aws_vpc.main.id
   ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
+    from_port       = 80
+    to_port         = 80
+    protocol        = "tcp"
     security_groups = [aws_security_group.wordpress_alb.id]
   }
   egress {
@@ -231,4 +275,40 @@ resource "aws_security_group" "wordpress_ec2" {
       tags["CreatedOn"]
     ]
   }
+}
+
+resource "aws_security_group_rule" "wordpress_ec2_to_rds" {
+  security_group_id        = aws_security_group.wordpress_db.id
+  type                     = "ingress"
+  from_port                = 3306
+  to_port                  = 3306
+  protocol                 = "tcp"
+  source_security_group_id = aws_security_group.wordpress_ec2.id
+}
+
+# --------------------------------
+#  iam
+resource "aws_iam_instance_profile" "wordpress_ec2" {
+  name = "wordpress_ec2"
+  role = aws_iam_role.wordpress_ec2.name
+}
+
+resource "aws_iam_role" "wordpress_ec2" {
+  name               = "wordpress_ec2"
+  assume_role_policy = data.aws_iam_policy_document.ssm_role.json
+}
+
+data "aws_iam_policy_document" "ssm_role" {
+  statement {
+    actions = ["sts:AssumeRole"]
+    principals {
+      type        = "Service"
+      identifiers = ["ec2.amazonaws.com"]
+    }
+  }
+}
+
+resource "aws_iam_role_policy_attachment" "ssm_role" {
+  role       = aws_iam_role.wordpress_ec2.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
 }
