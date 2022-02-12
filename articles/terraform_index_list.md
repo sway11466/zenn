@@ -22,6 +22,7 @@ Terraformを使う全ての人が実践すべき内容について説明しま�
 1. [Terraformバージョンを固定する](https://zenn.dev/sway/articles/terraform_staple_fixversion)
 1. [tfstateはS3などの共有ストレージに保存する](https://zenn.dev/sway/articles/terraform_staple_sharestate)
 1. tfstateのロック機能を使う(鋭意作成中)
+1. 全てのリソースに一律でタグを入れる(鋭意作成中)
 
 # 私的Teraformの書き方
 私が好むTerraformの書き方です。一般的なプラクティスと異なる部分もあります。
@@ -32,11 +33,6 @@ Terraformを使う全ての人が実践すべき内容について説明しま�
 1. 環境ごとにフォルダを分ける(鋭意作成中)
 1. 環境ごとの設定をモジュールにする(鋭意作成中)
 
-# TerraformでAWS
-1. TerraformでVPCなら無料で練習できる！(鋭意作成中)
-1. TerraformでEC2(鋭意作成中)
-1. TerraformでAurora(鋭意作成中)
-
 # Terraformコードベース
-ひな形となるソースコード群とその説明記事です。
-1. ALB+EC2+RDSでWordPressを公開する(鋭意作成中)
+Terraformのひな形となるコードを公開しています。
+1. [ALB+EC2+RDSのミニマル構成](https://zenn.dev/sway/articles/terraform_codebase_wordpress_minimal)
