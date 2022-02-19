@@ -1,9 +1,9 @@
 ---
-title: "QuasarFrameworkでお手軽に構築 - Vue3入門"
+title: "QuasarFrameworkでお手軽にVue3をはじめる - Vue3入門"
 emoji: "🐉"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["vue3", "TypeScript", "QuasarFramework"]
-published: false
+published: true
 ---
 
 # 概要
@@ -18,9 +18,7 @@ QuasarFrameworkでhello Worldを表示します。
 - 作業時間：15分
 - nodejs（npm）
 
-# 作業手順
-
-## インストールとプロジェクトの作成
+# インストールとブラウザ表示
 
 1. QuasarFrameworkのインストール
    公式の手順ではグローバルインストールですが（-gオプションあり）、ローカルインストールします（-gオプションなし）。個人の好みです。
