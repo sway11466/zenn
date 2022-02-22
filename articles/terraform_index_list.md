@@ -14,6 +14,7 @@ Terraformといえばクラウドリソースの作成ですが、「Terraform�
 1. 最低限おさえておきたいTerraformのアーキテクチャー(鋭意作成中)
 1. [変数の使い方](https://zenn.dev/sway/articles/terraform_biginner_varliable)
 1. [モジュールの使い方](https://zenn.dev/sway/articles/terraform_biginner_modules)
+1. フォルダで環境分割（エッセンス編）
 1. ワークスペースの使い方(鋭意作成中)
 1. 公式モジュール(Terraform Registory)の使い方(鋭意作成中)
 
@@ -30,7 +31,7 @@ Terraformを使う全ての人が実践すべき内容について説明しま�
 1. tfファイルはリソースのライフサイクルごとにわける(鋭意作成中)
 
 # Terraformのソース管理パターン
-1. 環境ごとにフォルダを分ける(鋭意作成中)
+1. フォルダで環境分割（実践編）
 1. 環境ごとの設定をモジュールにする(鋭意作成中)
 
 # Terraformコードベース
