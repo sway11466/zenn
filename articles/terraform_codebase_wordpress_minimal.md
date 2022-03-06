@@ -41,9 +41,9 @@ ALB＋EC2+RDSのシンプルな構成です。
    具体的な手順が知りたい場合は[別記事（ローカルでhello world）](https://zenn.dev/sway/articles/terraform_biginner_helloworld)を参照してください。
    ![init](/images/terraform_codebase_wordpress_minimal/terraform_codebase_wordpress_minimal_howtouse_00.jpg)
 1. terraformの初期化処理
-   initサブコマンドを実行して構築内容を確認します。
+   initサブコマンドを実行して初期設定を行います。
    ```
-   terraform.exe plan
+   terraform.exe init
    ```
    ![init](/images/terraform_codebase_wordpress_minimal/terraform_codebase_wordpress_minimal_howtouse_01.jpg)
 1. 構築内容を確認する
