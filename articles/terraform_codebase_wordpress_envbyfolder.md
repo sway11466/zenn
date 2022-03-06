@@ -3,7 +3,7 @@ title: "環境別にWordPressを構築する（実践編） - Terraformのきほ
 emoji: "🏰"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["terraform", "AWS", "WordPress"]
-published: false
+published: true
 ---
 TerraformでAWSを構築する際のひな形となるコードを公開しています。個別のコンポーネントではなくコードベース全体です。
 Terraform関連の他の記事は「[Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)」からどうぞ。
