@@ -1,5 +1,5 @@
 ---
-title: "環境別にWordPressを構築する（実践編） - Terraformのきほんと応用"
+title: "フォルダで複数環境管理（実践編） - Terraformのきほんと応用"
 emoji: "🏰"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["terraform", "AWS", "WordPress"]
