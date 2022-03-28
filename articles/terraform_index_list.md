@@ -19,7 +19,6 @@ Terraformといえばクラウドリソースの作成ですが、「Terraform�
 1. backendをコマンドライン引数で指定する(鋭意作成中)
 
 # Terraformの応用
-1. 入力変数でオブジェクト型を使う(鋭意作成中)
 1. 公式モジュール(Terraform Registory)の使い方(鋭意作成中)
 
 # Teraformのてっぱん
@@ -32,6 +31,7 @@ Terraformを使う全ての人が実践すべき内容について説明しま�
 # 私的Teraformの書き方
 私が好むTerraformの書き方です。一般的なプラクティスと異なる部分もあります。
 1. [variable.tfとoutputs.tfを分けない](https://zenn.dev/sway/articles/terraform_style_onefile)
+1. [入力変数でオブジェクト型を使う](https://zenn.dev/sway/articles/terraform_style_useobject)
 1. tfファイルはリソースのライフサイクルごとにわける(鋭意作成中)
 1. 環境ごとの設定をモジュールにする(鋭意作成中)
 
