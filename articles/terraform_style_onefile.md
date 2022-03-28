@@ -2,7 +2,7 @@
 title: "variable.tfとoutputs.tfを分けない - Terraformのきほんと応用"
 emoji: "🍳"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["terraform"]
+topics: ["terraform", "入力変数", "戻り値"]
 published: true
 ---
 私のTerraformソースの考え方や書き方をつづります。
@@ -70,6 +70,6 @@ EC2の変更が発生した場合の修正はec2.tfのみで完結します。ec
 また、ソースを読む際に必要な情報も1ファイルに集まっているので読みやすいので、valiables.tfとoutputs.tfに分離する一般的なプラクティスはイケてないと考えています。
 
 # 次はこれを読もう
-- tfファイルはリソースのライフサイクルごとにわける(鋭意作成中)
+- [入力変数でオブジェクト型を使う](https://zenn.dev/sway/articles/terraform_style_useobject)
 
 Terraform関連の他の記事は「[Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)」からどうぞ。

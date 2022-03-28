@@ -3,7 +3,7 @@ title: "オブジェクト型を活用する - Terraformのきほんと応用"
 emoji: "🍳"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["terraform", "ローカル変数", "入力変数", "戻り値"]
-published: false
+published: true
 ---
 私のTerraformソースの考え方や書き方をつづります。
 一般的なプラクティスと異なる部分もあります。また、考えが変わることもあるので同じ記事を継続的に更新します。
@@ -49,7 +49,7 @@ Terraform関連の他の記事は「[Terraformのきほんと応用](https://zen
    ```
 
 1. 戻り値（output）
-   outputにもobject型の要素を指定することができます。
+   戻り値にもobject型の要素を指定することができます。
    ```hcl:sample_module_network.tf
    resource "aws_vpc" "vpc" {
        // VPCの設定（略）
