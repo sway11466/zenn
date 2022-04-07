@@ -10,5 +10,5 @@ output print-all {
 }
 
 output print-keys {
-  value = [for k, v in var.subnets : v.cidr]
+  value = [for k, v in var.subnets : k]
 }
