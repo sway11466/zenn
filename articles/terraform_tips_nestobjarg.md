@@ -1,15 +1,15 @@
 ---
-title: "ネストしたオブジェクト型を型指定で受け取る - Terraformのきほんと応用"
-emoji: "🐣"
+title: "ネストしたオブジェクトを型指定で受け取る - Terraformのきほんと応用"
+emoji: "🛴"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["terraform", "入力変数"]
-published: false
+published: true
 ---
 Terraformコードを書く上での小さなTIPSです。
 Terraform関連の他の記事は「[Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)」からどうぞ。
 
 # 概要
-ネストしたオブジェクトをvariablesのtypeで指定する場合はmap型を使います。
+ネストしたオブジェクトをvariablesのtypeで受け取りたい場合はmap型を使います。
 
 # コード説明
 Terraformを書いていると以下のようなネストしたオブジェクトで設定を定義したくなることがあります。
@@ -43,7 +43,7 @@ output print-all {
 }
 
 output print-keys {
-  value = [for k, v in var.subnets : v.cidr]
+  value = [for k, v in var.subnets : k]
 }
 ```
 

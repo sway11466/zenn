@@ -35,6 +35,10 @@ Terraformを使う全ての人が実践すべき内容について説明しま�
 1. tfファイルはリソースのライフサイクルごとにわける(鋭意作成中)
 1. 環境ごとの設定をモジュールにする(鋭意作成中)
 
+# 小さなtips
+terraformを書いていて気が付いた小さなtipsをつづります。
+1. [ネストしたオブジェクトを型指定で受け取る](https://zenn.dev/sway/articles/terraform_tips_nestobjarg)
+
 # Terraformコードベース
 Terraformのひな形となるコードを公開しています。
 1. [ALB+EC2+RDSのミニマル構成](https://zenn.dev/sway/articles/terraform_codebase_wordpress_minimal)
