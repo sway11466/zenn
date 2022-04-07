@@ -38,4 +38,4 @@ Terraformを使う全ての人が実践すべき内容について説明しま�
 # Terraformコードベース
 Terraformのひな形となるコードを公開しています。
 1. [ALB+EC2+RDSのミニマル構成](https://zenn.dev/sway/articles/terraform_codebase_wordpress_minimal)
-1. [フォルダで複数環境管理（実践編）]((https://zenn.dev/sway/articles/terraform_codebase_wordpress_envbyfolder))
+1. [フォルダで複数環境管理（実践編）](https://zenn.dev/sway/articles/terraform_codebase_wordpress_envbyfolder)

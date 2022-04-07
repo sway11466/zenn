@@ -136,7 +136,7 @@ module "develop_main" {
 この記事で説明するフォルダ構成が、いちばんオーソドックスで実践的なTrraformの使い方だと思います。インフラ育ちでコーディングに慣れていないメンバーがTerraformを使い始めた場合は、この管理方法を薦めることが多いです。
 
 # 次はこれをやろう
-1. [フォルダで複数環境管理（実践編）]((https://zenn.dev/sway/articles/terraform_codebase_wordpress_envbyfolder))
+1. [フォルダで複数環境管理（実践編）](https://zenn.dev/sway/articles/terraform_codebase_wordpress_envbyfolder)
 1. ワークスペースの使い方(鋭意作成中)
 
 Terraform関連の他の記事は「[Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)」からどうぞ。
