@@ -70,6 +70,6 @@ EC2の変更が発生した場合の修正はec2.tfのみで完結します。ec
 また、ソースを読む際に必要な情報も1ファイルに集まっているので読みやすいので、valiables.tfとoutputs.tfに分離する一般的なプラクティスはイケてないと考えています。
 
 # 次はこれを読もう
-- [入力変数でオブジェクト型を使う](https://zenn.dev/sway/articles/terraform_style_useobject)
+- [オブジェクト型を活用する](https://zenn.dev/sway/articles/terraform_style_useobject)
 
 Terraform関連の他の記事は「[Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)」からどうぞ。
