@@ -40,9 +40,11 @@ Terraformを使う全ての人が実践すべき内容について説明しま�
 1. [オブジェクト型を活用する](https://zenn.dev/sway/articles/terraform_style_useobject)
 1. 入力変数はきっちり型を指定する(鋭意作成中)
 1. tfファイルはリソースのライフサイクルごとにわける(鋭意作成中)
+1. [複数環境を管理する方法の選び方](https://zenn.dev/sway/articles/terraform_style_envcomparisontable)
+1. 環境ごとの設定はファイルをわける(鋭意作成中)
 
 # 小さなtips 🛴
-terraformを書いていて気が付いた小さなtipsをつづります。
+terraformの書き方に関する小さなtipsをつづります。
 1. [ネストしたオブジェクトを型指定で受け取る](https://zenn.dev/sway/articles/terraform_tips_nestobjarg)
 1. [公式モジュール(Terraform Registry)の使い方](https://zenn.dev/sway/articles/terraform_tips_moduleregistory)
 1. 複数のパラメーターファイルを使う(鋭意作成中)

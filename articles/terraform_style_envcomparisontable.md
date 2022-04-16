@@ -3,7 +3,7 @@ title: "複数環境を管理する方法の選び方 - Terraformのきほんと
 emoji: "🍳"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["terraform", "複数環境"]
-published: false
+published: true
 ---
 私のTerraformソースの考え方や書き方をつづります。
 一般的なプラクティスと異なる部分もあります。また、考えが変わることもあるので同じ記事を継続的に更新します。
