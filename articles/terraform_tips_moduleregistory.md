@@ -14,7 +14,7 @@ Terraformのモジュール機能を活用した様々なモジュールが[Terr
 
 # 公式モジュールの使い方
 公式モジュールといっても、使い方は通常のモジュールと同じです。sourceで指定するパスに[Terraform公式サイト](https://registry.terraform.io/browse/modules)の値を使います。
-その中の1つの[subnetsモジュール](https://registry.terraform.io/modules/hashicorp/subnets/cidr/latest)は、ベースとなるcidrから指定したアドレス帯のciderを作るモジュールです。
+[subnetsモジュール](https://registry.terraform.io/modules/hashicorp/subnets/cidr/latest)は、ベースとなるcidrから指定したアドレス帯のciderを作るモジュールです。
 ```hcl  
 module "subnets" {
   source = "hashicorp/subnets/cidr"
@@ -36,11 +36,9 @@ output ciders {
 ```
 
 # 動かしてみる
-直前の操作の後の状態
-操作手順の説明
-操作後の状態
-![image title](/images/[article_title]/[article_title]_tutorial_00.jpg)
+リソース作成ではないのでplanで結果が確認できます。10.0.0.0/8をベースとして12bitのネットワークアドレスを3つ生成しています。
+![run sample](/images/terraform_tips_moduleregistory/terraform_tips_moduleregistory_00.jpg)
 
 # サンプルコード
 この記事で作成したコードはgithub上に公開しています。
-@[card](https://github.com/sway11466/zenn/tree/main/sample_codes/[article_title]])
+@[card](https://github.com/sway11466/zenn/tree/main/sample_codes/terraform_tips_moduleregistory)
