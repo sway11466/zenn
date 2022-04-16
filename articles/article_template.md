@@ -35,7 +35,7 @@ published: false
 
 # サンプルコード
 この記事で作成したコードはgithub上に公開しています。
-@[card](https://github.com/sway11466/zenn/tree/main/sample_codes/[article_title]])
+@[card](https://github.com/sway11466/zenn/tree/main/sample_codes/[article_title])
 
 # 次はこれをやろう
 - [次の記事のタイトル](https://zenn.dev/sway/articles/)

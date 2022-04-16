@@ -15,16 +15,18 @@ Terraformといえばクラウドリソースの作成ですが、「Terraform�
 1. 最低限おさえておきたいTerraformのアーキテクチャー(鋭意作成中)
 1. [変数の使い方](https://zenn.dev/sway/articles/terraform_biginner_varliable)
 1. [モジュールの使い方](https://zenn.dev/sway/articles/terraform_biginner_modules)
-1. 公式モジュール(Terraform Registory)の使い方(鋭意作成中)
 1. ワークスペースの使い方(鋭意作成中)
 1. backendをコマンドライン引数で指定する(鋭意作成中)
+1. 作成済みのリソースをTerraform管理課に加える
+1. 特定のリソースをTerraform管理課から除外ずる
 
 # Terraformの応用 🍞
 ローカルで試せるTeraformのちょっと高度な使い方。これをマスターすれば実践レベル。
 1. [フォルダで複数環境管理（エッセンス編）](https://zenn.dev/sway/articles/terraform_biginner_envbyfolder)
-1. -far-fileで複数環境管理（エッセンス編）(鋭意作成中)
+1. パラメーターファイルで複数環境管理（エッセンス編）(鋭意作成中)
 1. ワークスペースで複数環境管理（エッセンス編）(鋭意作成中)
 1. mapとfor_eachでまとめてオブジェクトを作成する(鋭意作成中)
+1. モジュール間で値を連携する(鋭意作成中)
 
 # Teraformのてっぱん ⚓
 Terraformを使う全ての人が実践すべき内容について説明します。
@@ -36,12 +38,15 @@ Terraformを使う全ての人が実践すべき内容について説明しま�
 私が好むTerraformの書き方です。一般的なプラクティスと異なる部分もあります。
 1. [variable.tfとoutputs.tfを分けない](https://zenn.dev/sway/articles/terraform_style_onefile)
 1. [オブジェクト型を活用する](https://zenn.dev/sway/articles/terraform_style_useobject)
-1. 入力変数はきっちり型を指定する
+1. 入力変数はきっちり型を指定する(鋭意作成中)
 1. tfファイルはリソースのライフサイクルごとにわける(鋭意作成中)
 
 # 小さなtips 🛴
 terraformを書いていて気が付いた小さなtipsをつづります。
 1. [ネストしたオブジェクトを型指定で受け取る](https://zenn.dev/sway/articles/terraform_tips_nestobjarg)
+1. [公式モジュール(Terraform Registry)の使い方](https://zenn.dev/sway/articles/terraform_tips_moduleregistory)
+1. 複数のパラメーターファイルを使う(鋭意作成中)
+1. AWSのIAM構築のチートシート(鋭意作成中)
 
 # Terraformコードベース 🏰
 実用的なTerraformコードのひな形を公開しています。

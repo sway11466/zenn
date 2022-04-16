@@ -3,7 +3,7 @@ title: "公式モジュール(Terraform Registry)の使い方 - Terraformのき�
 emoji: "🛴"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["terraform", "モジュール", "TerraformRegistry"]
-published: false
+published: true
 ---
 Terraformコードを書く上での小さなTIPSです。
 Terraform関連の他の記事は「[Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)」からどうぞ。
