@@ -23,7 +23,7 @@ Terraformといえばクラウドリソースの作成ですが、「Terraform�
 # Terraformの応用 🍞
 ローカルで試せるTeraformのちょっと高度な使い方。これをマスターすれば実践レベル。
 1. [フォルダで複数環境管理（エッセンス編）](https://zenn.dev/sway/articles/terraform_biginner_envbyfolder)
-1. パラメーターファイルで複数環境管理（エッセンス編）(鋭意作成中)
+1. [パラメーターファイルで複数環境管理（エッセンス編）](https://zenn.dev/sway/articles/terraform_biginner_envbyvarfile)
 1. ワークスペースで複数環境管理（エッセンス編）(鋭意作成中)
 1. mapとfor_eachでまとめてオブジェクトを作成する(鋭意作成中)
 1. モジュール間で値を連携する(鋭意作成中)

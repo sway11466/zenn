@@ -29,10 +29,9 @@ Terraformで複数環境を管理するための方法は多種多様という�
 
 # 特徴
 ## 説明
-「plan」や「apply」を実行する時に「-var-file」オプションで環境ごとに作成したパラメーターファイルを使指定します。
-これだけだと非常に簡単なのですが、「plan」や「apply」などのコマンドを実行する前にtfstateも環境ごとに切り替える必要があります。
-なぜかというとtfstateはterraformで構築したリソースを管理しており、例えばtfstateが本番環境を指している状況で開発環境のパラメーターファイルを指定して「apply」を実行すると大惨事となります。（本番環境のリソースを削除して開発環境として作り直すような挙動が予想されます）
-tfstateの切り替えは「terraform init」を「-backend-cnfig」オプションで環境ごとのbackend設定を指定することで切り替えられます。すでに別の環境を指している場合は「-reconfigure」オプションも使います。
+「plan」や「apply」を実行する際に「-var-file」オプションで環境ごとに作成したパラメーターファイルを指定します。これだけなら非常に簡単なのですが、実行する前にtfstateも環境ごとに切り替える必要があります。
+なぜかというとterraformはtfstateを使って構築したリソースを管理しており、例えばtfstateが本番環境を指している状況で開発環境のパラメーターファイルを指定して「apply」を実行すると大惨事となります。（本番環境のリソースを削除して開発環境として作り直す挙動が予想されます）
+tfstateの切り替えは「terraform init」に「-backend-cnfig」オプションを使用して実現します。すでに別の環境を指している場合は「-reconfigure」オプションも使います。
 
 ## ソース配置
 フォルダ構造とソース配置は以下の通りです。
@@ -80,8 +79,8 @@ terraform plan -var-file="envs/develop.tfvars"
 ```
 
 ## まとめ
-- 実行時に指定する設定ファイルで環境を切り替える
-- **実行前にinitでtfstateを切り替える（重要）**
+- **実行前にtfstateを切り替える（重要）**
+- 実行時に設定ファイルを指定する
 
 # サンプルコードによる実演
 
@@ -90,7 +89,8 @@ terraform plan -var-file="envs/develop.tfvars"
    @[card](https://github.com/sway11466/zenn/tree/main/sample_codes/terraform_biginner_envbyvarfile)
 
 1. 開発環境のファイル作成
-   開発環境の設定は以下の通りです。「tfstate/develop/terraform.tfstate」をtfstateのパスとして、「output/develop/develop.txt」を作成します。
+   開発環境の設定は以下の通りです。
+   tfstateのパスとして「tfstate/develop/terraform.tfstate」を指定します。
    ```hcl:envs/develop.tfbackend
    path = "tfstate/develop/terraform.tfstate"
    ```
