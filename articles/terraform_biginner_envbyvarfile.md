@@ -19,7 +19,7 @@ Terraformで複数環境を管理するための方法は多種多様という�
 ![goal](/images/terraform_biginner_envbyvarfile/terraform_biginner_envbyvarfile_goal.jpg)
 
 # 必要なもの
-- 作業時間：15分
+- 作業時間：30分
 - Terraformを実行できる環境
 - 変数とbackendの動的設定の理解
    :::message
@@ -29,7 +29,10 @@ Terraformで複数環境を管理するための方法は多種多様という�
 
 # 特徴
 ## 説明
-環境ごとにパラメーターファイルを作成し、terraform実行時のパラメーターを指定します。
+「plan」や「apply」を実行する時に「-var-file」オプションで環境ごとに作成したパラメーターファイルを使指定します。
+これだけだと非常に簡単なのですが、「plan」や「apply」などのコマンドを実行する前にtfstateも環境ごとに切り替える必要があります。
+なぜかというとtfstateはterraformで構築したリソースを管理しており、例えばtfstateが本番環境を指している状況で開発環境のパラメーターファイルを指定して「apply」を実行すると大惨事となります。（本番環境のリソースを削除して開発環境として作り直すような挙動が予想されます）
+tfstateの切り替えは「terraform init」を「-backend-cnfig」オプションで環境ごとのbackend設定を指定することで切り替えられます。すでに別の環境を指している場合は「-reconfigure」オプションも使います。
 
 ## ソース配置
 フォルダ構造とソース配置は以下の通りです。
@@ -48,30 +51,37 @@ terraform/
  ```
 
 ## 環境ごとの設定ファイル
-設定ファイルを環境ごとに作成します。
+環境ごとに2つの設定ファイル「.tfbackend」と「.tfvars」を作成します。
+「.tfbackend」にはtfstateのパスを定義します。
+```hcl:envs/develop.tfbackend
+path = "tfstate/develop/terraform.tfstate"
+```
+「.tfvars」には作成するファイルパスとファイルの内容を定義します。
 ```hcl:envs/develop.tfvars
-env = develop
+env = "develop"
 file = {
   content  = "hello world in develop!"
   filename = "output/develop/develop.txt"
 }
 ```
 
-## 実行
-「-backend-config」
-かならず切り替える必要がある。
+## 実行方法
+まずは「terraform init」を「-backend-config」オプションを指定して実行します。
 ```bash
 terraform init -backend-config="envs/develop.tfbackend"
 ```
-「-var-file」
+環境の切り替えなど2回目移行は「-reconfigure」オプションも必要になります。
+```bash
+terraform init -reconfigure -backend-config="envs/develop.tfbackend"
+```
+初期化後は「-var-file」を指定して「plan」や「apply」を実行します。
 ```bash
 terraform plan -var-file="envs/develop.tfvars"
 ```
 
 ## まとめ
-- 設定ファイルを環境ごとに作る
-- initでtfstateの切り替が必須（重要）
-- planやapply実行時に-var-fileを使用する
+- 実行時に指定する設定ファイルで環境を切り替える
+- **実行前にinitでtfstateを切り替える（重要）**
 
 # サンプルコードによる実演
 
@@ -80,59 +90,62 @@ terraform plan -var-file="envs/develop.tfvars"
    @[card](https://github.com/sway11466/zenn/tree/main/sample_codes/terraform_biginner_envbyvarfile)
 
 1. 開発環境のファイル作成
-   開発環境はoutput/develop/develop.txtを作成する設定にします。
-   ```hcl:envs/develop/setting.tf
-   locals {
-     file = {
-       content  = "hello world in develop!"
-       filename = "../../output/develop/develop.txt"
-     }
+   開発環境の設定は以下の通りです。「tfstate/develop/terraform.tfstate」をtfstateのパスとして、「output/develop/develop.txt」を作成します。
+   ```hcl:envs/develop.tfbackend
+   path = "tfstate/develop/terraform.tfstate"
+   ```
+   「.tfvars」には作成するファイルパスとファイルの内容を定義します。
+   ```hcl:envs/develop.tfvars
+   env = "develop"
+   file = {
+     content  = "hello world in develop!"
+     filename = "output/develop/develop.txt"
    }
    ```
-   カレントディレクトリを開発フォルダに変更してinit、applyを実行します。
+   init、applyを実行します。
    ```bash
-   cd envs\develop
-   terraform.exe init
-   terraform.exe apply
+   terraform.exe init -backend-config="envs/develop.tfbackend"
+   terraform.exe apply -var-file="envs/develop.tfvars"
    ```
    ![goal](/images/terraform_biginner_envbyvarfile/terraform_biginner_envbyvarfile_tutorial_01.jpg)
-   設定通りにoutput/develop/develop.txtが作成されています。
+   設定通りにtfstate/develop/terraform.tfstateとoutput/develop/develop.txtが作成されています。
    ![goal](/images/terraform_biginner_envbyvarfile/terraform_biginner_envbyvarfile_tutorial_02.jpg)
-   ファイルの内容も指定の通りです。
    ![goal](/images/terraform_biginner_envbyvarfile/terraform_biginner_envbyvarfile_tutorial_03.jpg)
+   ファイルの内容も指定の通りです。
+   ![goal](/images/terraform_biginner_envbyvarfile/terraform_biginner_envbyvarfile_tutorial_04.jpg)
 
 1. ステージング環境のファイル作成
-   同じようにステージング環境のファイルも作成します。
+   同じようにステージング環境のファイルも作成します。開発環境構築後なので「init」実行時に「-reconfigure」を指定します。
    ```bash
-   cd ..\staging
-   terraform.exe init
-   terraform.exe apply
+   terraform.exe init -reconfigure -backend-config="envs/staging.tfbackend"
+   terraform.exe apply -var-file="envs/staging.tfvars"
    ```
-   ![goal](/images/terraform_biginner_envbyvarfile/terraform_biginner_envbyvarfile_tutorial_04.jpg)
-   設定通りにoutput/staging/staging.txtが作成されています。
    ![goal](/images/terraform_biginner_envbyvarfile/terraform_biginner_envbyvarfile_tutorial_05.jpg)
-   ファイルの内容も指定の通りです。
+   設定通りにtfstate/staging/terraform.tfstateとoutput/staging/staging.txtが作成されています。
    ![goal](/images/terraform_biginner_envbyvarfile/terraform_biginner_envbyvarfile_tutorial_06.jpg)
+   ![goal](/images/terraform_biginner_envbyvarfile/terraform_biginner_envbyvarfile_tutorial_07.jpg)
+   ファイルの内容も指定の通りです。
+   ![goal](/images/terraform_biginner_envbyvarfile/terraform_biginner_envbyvarfile_tutorial_08.jpg)
 
 1. 本番環境のファイル作成
-   本番環境も同様です。
+   最後は本番環境です。
    ```bash
-   cd ..\production
-   terraform.exe init
-   terraform.exe apply
+   terraform.exe init -reconfigure -backend-config="envs/production.tfbackend"
+   terraform.exe apply -var-file="envs/production.tfvars"
    ```
-   ![goal](/images/terraform_biginner_envbyvarfile/terraform_biginner_envbyvarfile_tutorial_07.jpg)
-   設定通りにoutput/production/production.txtが作成されています。
-   ![goal](/images/terraform_biginner_envbyvarfile/terraform_biginner_envbyvarfile_tutorial_08.jpg)
-   ファイルの内容も指定の通りです。
    ![goal](/images/terraform_biginner_envbyvarfile/terraform_biginner_envbyvarfile_tutorial_09.jpg)
+   設定通りにoutput/production/production.txtが作成されています。
+   ![goal](/images/terraform_biginner_envbyvarfile/terraform_biginner_envbyvarfile_tutorial_10.jpg)
+   ![goal](/images/terraform_biginner_envbyvarfile/terraform_biginner_envbyvarfile_tutorial_11.jpg)
+   ファイルの内容も指定の通りです。
+   ![goal](/images/terraform_biginner_envbyvarfile/terraform_biginner_envbyvarfile_tutorial_12.jpg)
 
 # 感想
-あるていどTerraformに慣れてCICDが構築できるような環境では扱いやすい構成だと思います。私もこの構成をベースにモジュール化して使用することが多いです。
+Terraformに慣れてtfstateが理解できるようになっていれば扱いやすい構成だと思います。私もこの構成をベースにモジュール化して使用することが多くあります。
 
 # 次はこれをやろう
-1. [フォルダで複数環境管理（エッセンス編）](https://zenn.dev/sway/articles/terraform_biginner_envbyfolder)
 1. パラメーターファイルで複数環境管理（実践編）(鋭意作成中)
+1. [フォルダで複数環境管理（エッセンス編）](https://zenn.dev/sway/articles/terraform_biginner_envbyfolder)
 1. ワークスペースで複数環境管理（エッセンス編）(鋭意作成中)
 1. mapとfor_eachでまとめてオブジェクトを作成する(鋭意作成中)
 
