@@ -12,7 +12,7 @@ Terraform関連の他の記事は「[Terraformのきほんと応用](https://zen
 ネストしたオブジェクトをvariablesのtypeで受け取りたい場合はmap型を使います。
 
 # コード説明
-Terraformを書いていると以下のようなネストしたオブジェクトで設定を定義したくなることがあります。
+Terraformを書いていると以下のようなネストしたn個のオブジェクトで設定を定義したくなることがあります。
 ```hcl:terraform.tfvars
 subnets = {
   "application-subnet" = {
@@ -23,6 +23,7 @@ subnets = {
     cidr   = "192.168.100.0/24"
     public = false
   }
+  // サブネット設定が続く...
 }
 ```
 型なしで受け取ることもできるのですが、構造を定義しておいた方がソースの読みやすさが格段に変わってきます。

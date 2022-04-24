@@ -3,7 +3,7 @@ title: "パラメーターファイルで複数環境管理 - Terraformのきほ
 emoji: "🐣"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["terraform", "初心者", "複数環境"]
-published: true
+published: false
 ---
 ていねいを心掛けたTerraform記事です。スクリーンショット満載でやった気になれます。
 Terraformといえばクラウドリソースの作成ですが、この記事ではローカルPC上のリソース作成で済むように工夫しています。
@@ -128,7 +128,7 @@ terraform plan -var-file="envs/develop.tfvars"
    ![goal](/images/terraform_biginner_envbyvarfile/terraform_biginner_envbyvarfile_tutorial_09.jpg)
 
 # 感想
-この記事で説明するフォルダ構成が、いちばんオーソドックスで実践的なTrraformの使い方だと思います。インフラ育ちでコーディングに慣れていないメンバーがTerraformを使い始めた場合は、この管理方法を薦めることが多いです。
+あるていどTerraformに慣れてCICDが構築できるような環境では扱いやすい構成だと思います。私もこの構成をベースにモジュール化して使用することが多いです。
 
 # 次はこれをやろう
 1. [フォルダで複数環境管理（エッセンス編）](https://zenn.dev/sway/articles/terraform_biginner_envbyfolder)

@@ -17,8 +17,8 @@ Terraformといえばクラウドリソースの作成ですが、「Terraform�
 1. [モジュールの使い方](https://zenn.dev/sway/articles/terraform_biginner_modules)
 1. ワークスペースの使い方(鋭意作成中)
 1. backendをコマンドライン引数で指定する(鋭意作成中)
-1. 作成済みのリソースをTerraform管理課に加える
-1. 特定のリソースをTerraform管理課から除外ずる
+1. 作成済みのリソースをTerraform管理下に加える
+1. 特定のリソースをTerraform管理下から除外ずる
 
 # Terraformの応用 🍞
 ローカルで試せるTeraformのちょっと高度な使い方。これをマスターすれば実践レベル。
