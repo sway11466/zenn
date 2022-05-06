@@ -1,6 +1,6 @@
 ---
 title: "フォルダで複数環境管理（エッセンス編） - Terraformのきほんと応用"
-emoji: "🐣"
+emoji: "🍞"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["terraform", "初心者"]
 published: true
