@@ -153,7 +153,6 @@ module "リソースの名前" {
 @[card](https://github.com/sway11466/zenn/tree/main/sample_codes/terraform_biginner_modules)
 
 # 次はこれをやろう
-- [フォルダで複数環境管理（エッセンス編）](https://zenn.dev/sway/articles/terraform_biginner_envbyfolder)
-- ワークスペースの使い方(鋭意作成中)
+- [tfstateにふれてみよう](https://zenn.dev/sway/articles/terraform_biginner_tfstate)
 
 Terraform関連の他の記事は「[Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)」からどうぞ。

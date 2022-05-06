@@ -12,21 +12,21 @@ Terraformといえばクラウドリソースの作成ですが、「Terraform�
 # Terraformのきほん 🐣
 クラウドリソースの作成ではなくローカルのファイル作成で学ぶTeraformの使い方。
 1. [ローカルでhello world](https://zenn.dev/sway/articles/terraform_biginner_helloworld)
-1. 最低限おさえておきたいTerraformのアーキテクチャー(鋭意作成中)
 1. [変数の使い方](https://zenn.dev/sway/articles/terraform_biginner_varliable)
 1. [モジュールの使い方](https://zenn.dev/sway/articles/terraform_biginner_modules)
+1. モジュール間で値を連携する(鋭意作成中)
+1. [tfstateにふれてみよう](https://zenn.dev/sway/articles/terraform_biginner_tfstate)
+1. 作成済みのリソースをTerraform管理下に加える(鋭意作成中)
+1. 特定のリソースをTerraform管理下から除外ずる(鋭意作成中)
 1. ワークスペースの使い方(鋭意作成中)
-1. backendを使いこなす(鋭意作成中)
-1. 作成済みのリソースをTerraform管理下に加える
-1. 特定のリソースをTerraform管理下から除外ずる
+1. backendの使い方(鋭意作成中)
 
 # Terraformの応用 🍞
 ローカルで試せるTeraformのちょっと高度な使い方。これをマスターすれば実践レベル。
 1. [フォルダで複数環境管理（エッセンス編）](https://zenn.dev/sway/articles/terraform_biginner_envbyfolder)
 1. [パラメーターファイルで複数環境管理（エッセンス編）](https://zenn.dev/sway/articles/terraform_biginner_envbyvarfile)
 1. ワークスペースで複数環境管理（エッセンス編）(鋭意作成中)
-1. mapとfor_eachでまとめてオブジェクトを作成する(鋭意作成中)
-1. モジュール間で値を連携する(鋭意作成中)
+1. mapとfor_eachで複数のオブジェクトを作成する(鋭意作成中)
 
 # Teraformのてっぱん ⚓
 Terraformを使う全ての人が実践すべき内容について説明します。
@@ -40,8 +40,8 @@ Terraformを使う全ての人が実践すべき内容について説明しま�
 1. [オブジェクト型を活用する](https://zenn.dev/sway/articles/terraform_style_useobject)
 1. 入力変数はきっちり型を指定する(鋭意作成中)
 1. tfファイルはリソースのライフサイクルごとにわける(鋭意作成中)
-1. [複数環境を管理する方法の選び方](https://zenn.dev/sway/articles/terraform_style_envcomparisontable)
 1. 環境ごとの設定はファイルをわける(鋭意作成中)
+1. [複数環境を管理する方法の選び方](https://zenn.dev/sway/articles/terraform_style_envcomparisontable)
 
 # 小さなtips 🛴
 terraformの書き方に関する小さなtipsをつづります。
