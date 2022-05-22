@@ -40,7 +40,7 @@ resource "aws_subnet" "public_1c" {
 
 resource "aws_subnet" "public_1d" {
   vpc_id            = aws_vpc.main.id
-  availability_zone = "ap-northeast-1a"
+  availability_zone = "ap-northeast-1d"
   cidr_block        = local.network.public.cider_subnet_1d
   tags = {
     Name        = "${local.env}-public-1d"

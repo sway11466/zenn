@@ -22,8 +22,8 @@ locals {
   aurora = {
     engine    = "aurora-mysql"
     version   = "5.7"
-    parameter = "5.7.mysql_aurora.2.09.2"
-    instance  = "db.t2.micro"
+    parameter = "5.7.mysql_aurora.2.10.2"
+    instance  = "db.t3.small"
     username  = "admin"
     password  = "password"
   }

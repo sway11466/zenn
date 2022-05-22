@@ -37,8 +37,8 @@ output "access_url" {
 #  listener
 resource "aws_alb_listener" "mattermost" {
   load_balancer_arn = aws_lb.mattermost.arn
-  port              = "443"
-  protocol          = "HTTPS"
+  port              = "80"
+  protocol          = "HTTP"
   default_action {
     target_group_arn = aws_lb_target_group.mattermost.arn
     type             = "forward"

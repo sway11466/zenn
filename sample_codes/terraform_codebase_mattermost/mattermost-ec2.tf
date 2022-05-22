@@ -52,7 +52,7 @@ resource "aws_launch_template" "mattermost" {
       CreatedOn   = timestamp()
     }
   }
-  user_data =  data.template_file.mattermost.rendered
+  user_data = base64encode(data.template_file.mattermost.rendered)
 }
 
 data "template_file" "mattermost" {
