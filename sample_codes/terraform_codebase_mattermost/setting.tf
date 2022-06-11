@@ -18,6 +18,7 @@ locals {
       cider_subnet_1c = "10.0.101.0/24"
       cider_subnet_1d = "10.0.102.0/24"
     }
+    zone_id = "Z099952935G1DPZSNNCT5"
   }
   aurora = {
     engine    = "aurora-mysql"
@@ -28,7 +29,8 @@ locals {
     password  = "password"
   }
   mattermost = {
-    ami           = "ami-03d79d440297083e3"
+    ami           = "ami-02c3627b04781eada" // Amazon Linux 2 Kernel 5.10 AMI 2.0.20220426.0 x86_64 HVM gp2
     instance_type = "t3.micro"
+    domain_name   = "mattermost.sway11466.com"
   }
 }

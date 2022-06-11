@@ -9,9 +9,19 @@ TerraformでAWSを構築する際のひな形となるコードを公開して�
 Terraform関連の他の記事は「[Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)」からどうぞ。
 
 # 特徴
-リード文
-- ALB＋EC2＋Aurora＋S3によるMattermost
-- EC2はオートヒーリングです
+ALB＋EC2＋Aurora＋S3でmattermostを動かす実践的な構成です。システム構成の見どころは以下です。
+- ドメイン名＆SSLによるアクセス
+   - DNSレコードの作成とALBへの割り当て
+   - ALBへのSSL設定（AWSで管理するホストゾーンののサブドメインに対する証明書）
+- EC2はプライベートサブネットに配置
+   - インターネットからのアクセスはALB軽油
+   - インターネットへのアクセスはNatGW(Nat GateWay)経由
+   - プライベートセグメントへのセッションマネージャー接続
+- データはAurora(mysql)とs3に保管
+- EC2はオートヒーリング
+   - 起動テンプレートとAutoScalingグループによる管理
+   - ALBからAutoScalingグループへの分散
+- 1カ月動かすとxxx円ぐらいかかる
 
 # システム構成
 リード文

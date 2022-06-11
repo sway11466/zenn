@@ -55,7 +55,7 @@ resource "aws_db_subnet_group" "mattermost_db" {
 #   - ingressは接続元のソースに追加するため変更を無視する
 resource "aws_security_group" "mattermost_db" {
   name   = "mattermost-db"
-  vpc_id = aws_vpc.main.id
+  vpc_id = aws_vpc.mattermost.id
   egress {
     from_port   = 0
     to_port     = 0
