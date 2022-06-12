@@ -3,7 +3,7 @@ title: "ALB+EC2+AuroraでMattermost - Terraformのきほんと応用"
 emoji: "🏰"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["terraform", "AWS", "Mattermost"]
-published: false
+published: true
 ---
 TerraformでAWSを構築する際のひな形となるコードを公開しています。個別のコンポーネントではなくコードベース全体です。
 Terraform関連の他の記事は「[Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)」からどうぞ。
@@ -24,7 +24,7 @@ ALB＋EC2＋Aurora＋S3の構成による実践的なmattermost環境です。�
 - 1カ月動かすと2.5万円ぐらいかかります
    - EC2とAuroraは最小構成
    - 3AZで動かしているNatGWが費用の大半で2万円／月ぐらいかかります
-   - [AWS Pricing Calculatorで表示](https://calculator.aws/#/estimate?id=9243b6b8f4d63ebafbcc14a5d5762875ed35eaa0)
+   - [AWS Pricing Calculatorで見積を表示](https://calculator.aws/#/estimate?id=9243b6b8f4d63ebafbcc14a5d5762875ed35eaa0)
 
 # システム構成
 publicサブネットにはALBとNatGWのみという、プライベートなチャットを使いたい組織が好みそうな構成です。
@@ -38,7 +38,7 @@ publicサブネットにはALBとNatGWのみという、プライベートなチ
 
 # 使用方法
 1. ホストゾーンIDとドメイン名を変更する
-   設定ファイルのホストゾーンIDとドメイン名を変更します。
+   設定ファイルのホストゾーンIDとドメイン名（以下）を変更します。他の部分も必要に応じて変更します。
    ```hcl:setting.tf
    locals {
       network = {
