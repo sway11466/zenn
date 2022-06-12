@@ -53,4 +53,8 @@ terraformの書き方に関する小さなtipsをつづります。
 # Terraformコードベース 🏰
 実用的なTerraformコードのひな形を公開しています。
 1. [ALB+EC2+RDSのミニマル構成](https://zenn.dev/sway/articles/terraform_codebase_wordpress_minimal)
+1. [ALB+EC2+AuroraでMattermost](https://zenn.dev/sway/articles/terraform_codebase_mattermost)
 1. [フォルダで複数環境管理（実践編）](https://zenn.dev/sway/articles/terraform_codebase_wordpress_envbyfolder)
+
+# 別の記事たち
+- [AWSをはじめからていねいに](https://zenn.dev/sway/articles/aws_index_list)

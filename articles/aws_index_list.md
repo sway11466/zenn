@@ -48,9 +48,17 @@ No.3でWordPressを動かすまで無料枠のみで進められますが、No.4
 # AWSを使い倒す
 1. 個人利用でも300USD無料クレジットを使おう(鋭意作成中)
 
+# AWSの実装例
+Terraformで構築するAWSの実装例
+1. [ALB+EC2+RDSのミニマル構成](https://zenn.dev/sway/articles/terraform_codebase_wordpress_minimal)
+1. [ALB+EC2+AuroraでMattermost](https://zenn.dev/sway/articles/terraform_codebase_mattermost)
+
 # 記事の方向性を検討中のもの
 - ECS
 - EKS
 - Lambda
 - Amplify
 - 可用性設計
+
+# 別の記事たち
+- [Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)
