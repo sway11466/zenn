@@ -1,6 +1,7 @@
 # --------------------------------
 #  mattermost
 # --------------------------------
+#  https://zenn.dev/sway/articles/terraform_codebase_mattermost
 
 # --------------------------------
 #  EC2 (Launch Template)
@@ -10,9 +11,9 @@ resource "aws_autoscaling_group" "mattermost" {
   max_size         = 1
   min_size         = 1
   vpc_zone_identifier = [
-    aws_subnet.public_1d.id,
-    aws_subnet.public_1c.id,
-    aws_subnet.public_1d.id
+    aws_subnet.private_1d.id,
+    aws_subnet.private_1c.id,
+    aws_subnet.private_1d.id
   ]
   launch_template {
     id      = aws_launch_template.mattermost.id
@@ -61,6 +62,7 @@ resource "aws_launch_template" "mattermost" {
       tag_specifications["tags"]
     ]
   }
+  depends_on = [aws_rds_cluster_instance.mattermost_db]
 }
 
 data "template_file" "mattermost" {

@@ -3,79 +3,64 @@ title: "ALB+EC2+AuroraでMattermost - Terraformのきほんと応用"
 emoji: "🏰"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["terraform", "AWS", "Mattermost"]
-published: true
+published: false
 ---
 TerraformでAWSを構築する際のひな形となるコードを公開しています。個別のコンポーネントではなくコードベース全体です。
 Terraform関連の他の記事は「[Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)」からどうぞ。
 
 # 特徴
-ALB＋EC2＋Aurora＋S3でmattermostを動かす実践的な構成です。システム構成の見どころは以下です。
+ALB＋EC2＋Aurora＋S3の構成による実践的なmattermost環境です。システム構成の特徴は以下の通り沢山ありますが、細かい説明はしていません。今後、１つ１つ記事にしていきます。
 - ドメイン名＆SSLによるアクセス
    - DNSレコードの作成とALBへの割り当て
-   - ALBへのSSL設定（AWSで管理するホストゾーンののサブドメインに対する証明書）
+   - ACMによるSSL証明書の作成
 - EC2はプライベートサブネットに配置
-   - インターネットからのアクセスはALB軽油
+   - インターネットからのアクセスはALB経由
    - インターネットへのアクセスはNatGW(Nat GateWay)経由
    - プライベートセグメントへのセッションマネージャー接続
 - データはAurora(mysql)とs3に保管
 - EC2はオートヒーリング
    - 起動テンプレートとAutoScalingグループによる管理
    - ALBからAutoScalingグループへの分散
-- 1カ月動かすとxxx円ぐらいかかる
+- 1カ月動かすと2.5万円ぐらいかかります
+   - EC2とAuroraは最小構成
+   - 3AZで動かしているNatGWが費用の大半で2万円／月ぐらいかかります
+   - [AWS Pricing Calculatorで表示](https://calculator.aws/#/estimate?id=9243b6b8f4d63ebafbcc14a5d5762875ed35eaa0)
 
 # システム構成
-リード文
-![system structure](/images/terraform_codebase_wordpress_minimal/terraform_codebase_wordpress_minimal_structure_00.jpg)
+publicサブネットにはALBとNatGWのみという、プライベートなチャットを使いたい組織が好みそうな構成です。
+![system structure](/images/terraform_codebase_mattermost/terraform_codebase_mattermost_structure.png)
 
 # ソース構成
-6本のソースで構成しています。
-![sourcecode](/images/terraform_codebase_wordpress_minimal/terraform_codebase_wordpress_minimal_code_00.jpg)
-1. application.tf
-   ALBとEC2に関連するリソースを定義しています。
-1. application_ec2_userdata.sh
-   EC2構築時に実行するWordPressのインストールのスクリプトです。EC2のUserDataとして使用します。ここのソースを書き換えればWordPress以外のサービスも構築可能です。
-1. database.tf
-   RDSに関連するリソースを定義しています。
-1. main.tf
-   Terrafor自体のバージョン縛りや、AWSプロバイダーの設定です。
-1. network.tf
-   VPCを定義しています。
-   このファイルで定義しているサブネットは使用していません。ALB、EC2、RDSなどリソース個別にサブネットを作成する方針としているためです（別記事で説明予定です）。にもかかわらず未使用のサブネットを定義しているのは、今後の何らかの作業（GUIでお試しとか）を想定したものです。
-1. setting.tf
-   各種リソースの設定を一元的に定義しています。
-   １つのファイルに設定を集約することで、環境が増えた際にファイルコンペアで環境の差分を見やすくなります。
-   設定ファイル内にnetworkやrdsなどのセクションを設けることで、設定項目のまとまりを判別しやすくしています。
+フラットな構成でnetwork系とmattermost系のソースを分けています。また、ソースを読むのに必要な知識を少なくするため以下の機能を使用していません。
+- for_each文
+- ワークスペース
+![source list](/images/terraform_codebase_mattermost/terraform_codebase_mattermost_code.png)
 
 # 使用方法
-1. terraformとソースを配置する
+1. ホストゾーンIDとドメイン名を変更する
+   設定ファイルのホストゾーンIDとドメイン名を変更します。
+   ```hcl:setting.tf
+   locals {
+      network = {
+         zone_id = "Z099999999GHIJKLMNOPQ"
+      }
+      mattermost = {
+         domain_name = "mattermost.change-domain.com"
+     }
+   }
+   ```
+1. terraformで構築する
+   特別な手順は不要でterraformコマンドを順に実行するのみです。Auroraの構築があるため5分～10分程度かかります。terraform完了後もmattermostサーバーの構築に5～10分ぐらいかかります。
    具体的な手順が知りたい場合は[別記事（ローカルでhello world）](https://zenn.dev/sway/articles/terraform_biginner_helloworld)を参照してください。
-   ![init](/images/terraform_codebase_wordpress_minimal/terraform_codebase_wordpress_minimal_howtouse_00.jpg)
-1. terraformの初期化処理
-   initサブコマンドを実行して初期設定を行います。
    ```
    terraform.exe init
-   ```
-   ![init](/images/terraform_codebase_wordpress_minimal/terraform_codebase_wordpress_minimal_howtouse_01.jpg)
-1. 構築内容を確認する
-   planサブコマンドを実行して構築内容を確認します。
-   ```
    terraform.exe plan
-   ```
-   ![plan](/images/terraform_codebase_wordpress_minimal/terraform_codebase_wordpress_minimal_howtouse_02.jpg)
-1. 構築する
-   applyサブコマンドを実行して構築します。途中で本当に構築するかの確認があるのでyesを入力します。
-   ```
    terraform.exe apply
    ```
-   ![apply](/images/terraform_codebase_wordpress_minimal/terraform_codebase_wordpress_minimal_howtouse_03.jpg)
-   ![apply](/images/terraform_codebase_wordpress_minimal/terraform_codebase_wordpress_minimal_howtouse_04.jpg)
-1. 構築結果を確認する
-   正常に構築が完了するとWordPressにアクセスするURLが表示されます。セットアップの途中で使用するRDSのホスト名も表示されます。
-   ![result](/images/terraform_codebase_wordpress_minimal/terraform_codebase_wordpress_minimal_howtouse_05.jpg)
 1. ブラウザでアクセス
-   ブラウザでアクセスするとWordPresの設定画面が表示されています。
-   ![show in browser](/images/terraform_codebase_wordpress_minimal/terraform_codebase_wordpress_minimal_howtouse_06.jpg)
+   ブラウザでアクセスするとmattermostの初期画面が表示されています。
+   ![show in browser](/images/terraform_codebase_mattermost/terraform_codebase_mattermost_howto.png)
 
 # サンプルコード
 この記事で作成したコードはgithub上に公開しています。
-@[card](https://github.com/sway11466/zenn/tree/main/sample_codes/terraform_codebase_wordpress_minimal)
+@[card](https://github.com/sway11466/zenn/tree/main/sample_codes/terraform_codebase_mattermost_structure)

@@ -1,6 +1,7 @@
 # --------------------------------
 #  Aurora for Mattermost
 # --------------------------------
+#  https://zenn.dev/sway/articles/terraform_codebase_mattermost
 
 # --------------------------------
 #  cluster & instance

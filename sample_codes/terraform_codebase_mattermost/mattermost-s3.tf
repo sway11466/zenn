@@ -1,6 +1,7 @@
 # --------------------------------
 #  S3 for mattermost
 # --------------------------------
+#  https://zenn.dev/sway/articles/terraform_codebase_mattermost
 
 resource "aws_s3_bucket" "mattermost" {
   bucket = "${local.env}-mattermost-data"

@@ -1,6 +1,7 @@
 # --------------------------------
 #  ALB for mattermost
 # --------------------------------
+#  https://zenn.dev/sway/articles/terraform_codebase_mattermost
 
 # --------------------------------
 #  R53

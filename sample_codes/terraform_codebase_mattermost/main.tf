@@ -1,6 +1,7 @@
 # --------------------------------
 #  main
 # --------------------------------
+#  https://zenn.dev/sway/articles/terraform_codebase_mattermost
 
 terraform {
   required_version = "~> 1.2.0"

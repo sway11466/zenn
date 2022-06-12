@@ -1,6 +1,7 @@
 # --------------------------------
 #  setting
 # --------------------------------
+#  https://zenn.dev/sway/articles/terraform_codebase_mattermost
 
 locals {
   env = "codebase"
@@ -18,7 +19,7 @@ locals {
       cider_subnet_1c = "10.0.101.0/24"
       cider_subnet_1d = "10.0.102.0/24"
     }
-    zone_id = "Z099952935G1DPZSNNCT5"
+    zone_id = "Z099999999GHIJKLMNOPQ"
   }
   aurora = {
     engine    = "aurora-mysql"
@@ -31,6 +32,6 @@ locals {
   mattermost = {
     ami           = "ami-02c3627b04781eada" // Amazon Linux 2 Kernel 5.10 AMI 2.0.20220426.0 x86_64 HVM gp2
     instance_type = "t3.micro"
-    domain_name   = "mattermost.sway11466.com"
+    domain_name   = "mattermost.change-domain.com"
   }
 }
