@@ -150,7 +150,7 @@ resource "aws_iam_policy" "mattermost_ec2" {
 data "aws_iam_policy_document" "mattermost_ec2_policy" {
   statement {
     actions   = ["s3:*"]
-    resources = [aws_s3_bucket.mattermost.arn]
+    resources = ["${aws_s3_bucket.mattermost.arn}/*"]
   }
 }
 
