@@ -63,4 +63,4 @@ publicサブネットにはALBとNatGWのみという、プライベートなチ
 
 # サンプルコード
 この記事で作成したコードはgithub上に公開しています。
-@[card](https://github.com/sway11466/zenn/tree/main/sample_codes/terraform_codebase_mattermost_structure)
+@[card](https://github.com/sway11466/zenn/tree/main/sample_codes/terraform_codebase_mattermost)
