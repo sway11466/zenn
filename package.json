@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/sway11466/zenn#readme",
   "dependencies": {
-    "zenn-cli": "^0.1.110"
+    "zenn-cli": "^0.1.113"
   }
 }
