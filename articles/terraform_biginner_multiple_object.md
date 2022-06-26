@@ -2,8 +2,8 @@
 title: "mapとfor_eachで複数オブジェクトを作成する - Terraformのきほんと応用"
 emoji: "🐣"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["tags"]
-published: false
+topics: ["terraform", "for_each", "map"]
+published: true
 ---
 ていねいを心掛けたTerraform記事です。スクリーンショット満載でやった気になれます。
 Terraformといえばクラウドリソースの作成ですが、この記事ではローカルPC上のリソース作成で済むように工夫しています。
@@ -36,10 +36,10 @@ users = {
 }   
 ```
 
-# for_eachによる複数オブジェクトの作成
+# for_eachで複数オブジェクトの作成する
 terraformで作成するすべてのリソースはfor_eachを指定することができます。
-for_eachにはmap型の値を指定することができます。（配列指定もできますが、この記事の対象外）
-for_eachを指定したリソースでは以下の特別な変数を使用することができます。名前の通り、map型の値の項目名と値を表します。
+for_eachにはmap型の値を指定することができます。（Set型も指定できますが、この記事の対象外）
+for_eachを指定したリソースでは以下の特別な変数を使用することができます。名前の通り項目名と値を表します。
 - each.key
 - each.value
 ```hcl:network.tf
@@ -52,10 +52,10 @@ resource "subnet" "subnets" {
   public   = eavch.value.public
 }
 ```
-本家の解説はこちら。（英語）
+本家のfor_each解説はこちら。（英語）
 @[card](https://www.terraform.io/language/meta-arguments/for_each)
 
-# mapとfor_eachによる複数オブジェクト作成の方法
+# mapとfor_eachによる複数ファイル作成の例
 
 1. map型でファイルの情報を定義する
     ファイル名と内容が異なるファイルを複数作成するための定義を作成します。
@@ -92,7 +92,7 @@ resource "subnet" "subnets" {
     ![exec init](/images/terraform_biginner_multiple_object/terraform_biginner_multiple_object_tutorial_01.jpg)
 
 1. 実行結果を事前確認する
-    実行結果を事前確認するために「plan」コマンドを実行します。
+    「plan」コマンドで実行結果を事前確認します。
     ```
     terraform plan
     ```
@@ -100,7 +100,7 @@ resource "subnet" "subnets" {
     ![exec plan](/images/terraform_biginner_multiple_object/terraform_biginner_multiple_object_tutorial_02.jpg)
 
 1. 実行してファイルを作成する
-    ファイルを作成するために「apply」コマンドを実行します。
+    「apply」コマンドでファイルを作成します。
     ```
     terraform apply
     ```
