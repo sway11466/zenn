@@ -3,7 +3,7 @@ title: "設計を理解しやすいソース構成で書く - Terraformのきほ
 emoji: "🍳"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["terraform", "ソース構成", "AWS"]
-published: false
+published: true
 ---
 私のTerraformソースの考え方や書き方をつづります。
 一般的なプラクティスと異なる部分もあります。また、考えが変わることもあるので同じ記事を継続的に更新します。
