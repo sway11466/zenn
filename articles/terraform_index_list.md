@@ -39,7 +39,7 @@ Terraformを使う全ての人が実践すべき内容について説明しま�
 1. [variable.tfとoutputs.tfを分けない](https://zenn.dev/sway/articles/terraform_style_onefile)
 1. [オブジェクト型を活用する](https://zenn.dev/sway/articles/terraform_style_useobject)
 1. 入力変数はきっちり型を指定する(鋭意作成中)
-1. tfファイルはリソースのライフサイクルごとにわける(鋭意作成中)
+1. [設計を理解しやすいソース構成で書く](https://zenn.dev/sway/articles/terraform_style_srcstructure)
 1. 環境ごとの設定はファイルをわける(鋭意作成中)
 1. [複数環境を管理する方法の選び方](https://zenn.dev/sway/articles/terraform_style_envcomparisontable)
 
