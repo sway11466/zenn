@@ -67,4 +67,4 @@ Zennのトップページの記事一覧を出力する。
 
 # サンプルコード
    この記事で使用するコードはgithub上に公開しています。
-   @[card](https://github.com/sway11466/zenn/tree/main/sample_codes/ts_helloworld)
+   @[card](https://github.com/sway11466/zenn/tree/main/sample_codes/ts_puppeteer_scraping)
