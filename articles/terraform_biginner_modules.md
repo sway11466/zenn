@@ -152,7 +152,11 @@ module "リソースの名前" {
 この記事で作成したコードはgithub上に公開しています。
 @[card](https://github.com/sway11466/zenn/tree/main/sample_codes/terraform_biginner_modules)
 
+# 参考ページ
+- Terraformオフィシャルの入力変数の説明
+    @[card](https://www.terraform.io/language/values/variables#variable-definitions-tfvars-files)
+
 # 次はこれをやろう
-- [tfstateにふれてみよう](https://zenn.dev/sway/articles/terraform_biginner_tfstate)
+- [モジュールの使い方](https://zenn.dev/sway/articles/terraform_biginner_modules)
 
 Terraform関連の他の記事は「[Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)」からどうぞ。
