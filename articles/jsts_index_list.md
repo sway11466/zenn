@@ -3,7 +3,7 @@ title: "Javascript/TypeScript関連の記事"
 emoji: "📑"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["javascript", "typescript"]
-published: false
+published: true
 ---
 Javascript/Typescript関連の記事です。
 
