@@ -3,7 +3,7 @@ title: "TypeScriptでちょっとした処理を書く - TypeScript入門"
 emoji: "🪟"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["TypeScript"]
-published: false
+published: true
 ---
 
 # 概要
