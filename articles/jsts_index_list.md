@@ -12,7 +12,7 @@ Javascript/Typescript関連の記事です。
 
 # TypeScript入門 🪟
 1. [TypeScriptでちょっとした処理を書く](https://zenn.dev/sway/articles/ts_helloworld)
-1. TypeScript+Puppeteerでスクレイピング
+1. [TypeScript+Puppeteerでスクレイピング](https://zenn.dev/sway/articles/)
 
 # 別の記事たち
 - [AWSをはじめからていねいに](https://zenn.dev/sway/articles/aws_index_list)
