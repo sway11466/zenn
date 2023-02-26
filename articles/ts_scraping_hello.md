@@ -12,7 +12,7 @@ Headless Chrome（見えない画面で動くChrome）を手軽に使えるPuppe
 
 # ゴール
 Zennのトップページの記事一覧を出力する。
-![image title](/images/ts_puppeteer_scraping/ts_puppeteer_scraping_goal.jpg)
+![image title](/images/ts_scraping_hello/ts_scraping_hello_goal.jpg)
 
 # 必要なもの
 - 作業時間：10分
@@ -30,7 +30,7 @@ Zennのトップページの記事一覧を出力する。
    ```
    npm install puppeteer
    ```
-   ![image title](/images/ts_puppeteer_scraping/ts_puppeteer_scraping_tutorial_00.jpg)
+   ![image title](/images/ts_scraping_hello/ts_scraping_hello_tutorial_00.jpg)
 
 1. スクレイピングするソースを作成する
    トップページの記事タイトルを列挙してスクショをとるソースを作成します。
@@ -61,10 +61,10 @@ Zennのトップページの記事一覧を出力する。
    npx ts-node scraping.ts
    ```
    記事の一覧が表示されました。
-   ![image title](/images/ts_puppeteer_scraping/ts_puppeteer_scraping_tutorial_01.jpg)
+   ![image title](/images/ts_scraping_hello/ts_scraping_hello_tutorial_01.jpg)
    トップページのスクショも作成されています。
-   ![image title](/images/ts_puppeteer_scraping/ts_puppeteer_scraping_tutorial_02.jpg)
+   ![image title](/images/ts_scraping_hello/ts_scraping_hello_tutorial_02.jpg)
 
 # サンプルコード
    この記事で使用するコードはgithub上に公開しています。
-   @[card](https://github.com/sway11466/zenn/tree/main/sample_codes/ts_puppeteer_scraping)
+   @[card](https://github.com/sway11466/zenn/tree/main/sample_codes/ts_scraping_hello)
