@@ -23,7 +23,7 @@ Zennのトップページの記事一覧を出力する。
     [TypeScriptでちょっとした処理を書く](https://zenn.dev/sway/articles/ts_helloworld)
     :::
 
-# Puppeteerのインストールと実行
+# Zennのトップページをスクレイピング
 
 1. Puppeteerのインストール
    Puppeteerをインストールします。
