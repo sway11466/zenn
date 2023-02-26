@@ -13,9 +13,9 @@ published: true
 # TypeScript入門 🪟
 1. [TypeScriptでちょっとした処理を書く](https://zenn.dev/sway/articles/ts_biginner_helloworld)
 
-# スクレイピング
+# スクレイピング 📽️
 1. [TypeScript+Puppeteerでスクレイピング](https://zenn.dev/sway/articles/ts_scraping_hello)
-1. [PuppeteerでKindel蔵書を一括取得]()
+1. PuppeteerでKindel蔵書を一括取得
 
 # QuasarFrameworkでDesktopアプリを作る
 1. QuasarFrameworkでDesktopアプリを作る
