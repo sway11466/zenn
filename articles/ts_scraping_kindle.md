@@ -3,7 +3,7 @@ title: "Kindleの蔵書を取得する - TypeScript入門"
 emoji: "📽️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["TypeScript", "Puppeteer", "scraping", "Kindle"]
-published: false
+published: true
 ---
 
 # 概要

@@ -15,7 +15,7 @@ published: true
 
 # スクレイピング 📽️
 1. [TypeScript+Puppeteerでスクレイピング](https://zenn.dev/sway/articles/ts_scraping_hello)
-1. PuppeteerでKindel蔵書を一括取得
+1. [PuppeteerでKindel蔵書を一括取得](https://zenn.dev/sway/articles/ts_scraping_kindle)
 
 # QuasarFrameworkでDesktopアプリを作る
 1. QuasarFrameworkでDesktopアプリを作る
