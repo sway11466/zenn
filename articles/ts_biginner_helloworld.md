@@ -12,7 +12,7 @@ TypeScriptコードの動作検証や定型処理を自動化したい場合な�
 
 # ゴール
 TypeScriptで書いたhello worldソースを直接実行します。
-![image title](/images/ts_helloworld/ts_helloworld_goal.jpg)
+![image title](/images/ts_biginner_helloworld/ts_biginner_helloworld_goal.jpg)
 
 # 必要なもの
 - 作業時間：10分
@@ -25,16 +25,16 @@ TypeScriptで書いたhello worldソースを直接実行します。
    ```
    npm install typescript ts-node
    ```
-   ![image title](/images/ts_helloworld/ts_helloworld_tutorial_00.jpg)
+   ![image title](/images/ts_biginner_helloworld/ts_biginner_helloworld_tutorial_00.jpg)
 
 1. 初期化する
    TypeScriptを実行できるようにnpx tsc --initコマンドを実行してtsconfig.json を作成します。
    ```
    npx tsc --init
    ```
-   ![image title](/images/ts_helloworld/ts_helloworld_tutorial_01.jpg)
+   ![image title](/images/ts_biginner_helloworld/ts_biginner_helloworld_tutorial_01.jpg)
    コマンドを実行するとtsconfig.jsonが作成されてます。
-   ![image title](/images/ts_helloworld/ts_helloworld_tutorial_02.jpg)
+   ![image title](/images/ts_biginner_helloworld/ts_biginner_helloworld_tutorial_02.jpg)
 
 1. hello worldソースを作成する
    hello world!を出力するのみのソースを作成します。
@@ -48,11 +48,11 @@ TypeScriptで書いたhello worldソースを直接実行します。
    npx ts-node hello.ts
    ```
    無事にhello world!が表示できました。
-   ![image title](/images/ts_helloworld/ts_helloworld_tutorial_03.jpg)
+   ![image title](/images/ts_biginner_helloworld/ts_biginner_helloworld_tutorial_03.jpg)
 
 # サンプルコード
    この記事で使用するコードはgithub上に公開しています。
-   @[card](https://github.com/sway11466/zenn/tree/main/sample_codes/ts_helloworld)
+   @[card](https://github.com/sway11466/zenn/tree/main/sample_codes/ts_biginner_helloworld)
 
 # 感想
 TypeScriptは大規模開発向けの言語とされていますが、ちょっとした処理を書くのにも便利です。
