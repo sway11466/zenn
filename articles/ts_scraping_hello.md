@@ -1,9 +1,9 @@
 ---
 title: "TypeScript+Puppeteerでスクレイピング - TypeScript入門"
-emoji: "🪟"
+emoji: "📽️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["TypeScript", "Puppeteer", "scraping"]
-published: false
+published: true
 ---
 
 # 概要
