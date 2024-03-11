@@ -1,16 +1,15 @@
 ---
 title: "プロジェクトを作成してHTML公開 - Firebaseで遊ぼう！"
-emoji: "🐣"
+emoji: "🐦"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["firebase", "初心者"]
-published: false
+published: true
 ---
 Firebaseを使って遊ぶ記事です。スクリーンショット満載でやった気になれます。
-[記事の一覧](https://zenn.dev/sway/articles/)
 
 ## 概要
 Firebaseのホスティング機能を使用した Hello World です。
-プロジェクトを作成してホスティング用にHTMLをプロイします。
+ホスティング用のHTMLを作成してプロイします。
 
 ## ゴール
 Firebaseにプロジェクトを作成してHTMLを公開します。
@@ -47,7 +46,7 @@ https://firebase.google.com をブラウザで表示して、「使ってみる�
 「Googleアナリティクスデータ共有～」と「Googleアナリティクス利用規約～」の2つのチェックボックスをオンにして「プロジェクトを作成」を押下します。
 ![image](/images/firebase_helloworld_hosting/firebase_helloworld_hosting_tutorial_106.png)
 
-プロジェクトの作成完了までしばらく待ちます。作成とデプロイ
+プロジェクトの作成完了までしばらく待ちます。私が試したときは1分ぐらいでした。
 ![image](/images/firebase_helloworld_hosting/firebase_helloworld_hosting_tutorial_107.png)
 
 プロジェクトが完成したら「続行」を押下します。
@@ -75,22 +74,22 @@ cd firebase_helloworld
 ```
 ![image](/images/firebase_helloworld_hosting/firebase_helloworld_hosting_tutorial_211.png)
 
-コマンドプロンプトを起動して以下のコマンドを実行します。
+以下のコマンドを実行して firebase-tools のインストールを始めます。
 ```bash
 npm install -g firebase-tools
 ```
 ![image](/images/firebase_helloworld_hosting/firebase_helloworld_hosting_tutorial_212.png)
 
-インストールが完了したらブラウザに戻ります。
+インストールが完了したらブラウザのセットアップ画面に戻ります。
 ![image](/images/firebase_helloworld_hosting/firebase_helloworld_hosting_tutorial_213.png)
 
 「Firebase Javascript SDKをウェブアプリを～」のチェックボックスをオンにして「次へ」を押下します。
 ![image](/images/firebase_helloworld_hosting/firebase_helloworld_hosting_tutorial_214.png)
 
-次のような画面となるのでコマンドプロンプトを表示します。
+次のような画面となるので、再びコマンドプロンプト画面に切り替えます。
 ![image](/images/firebase_helloworld_hosting/firebase_helloworld_hosting_tutorial_220.png)
 
-コマンドプロンプトで以下を実行します。
+以下を実行してgoogleアカウントへのログインを開始します。
 ```bash
 firebase login
 ```
@@ -99,7 +98,7 @@ firebase login
 Firebaseによる情報収集の許可を求められるためエンターキーを押下します。（Yを入力してもOKです）
 ![image](/images/firebase_helloworld_hosting/firebase_helloworld_hosting_tutorial_226.png)
 
-自動的にブラウザに遷移するため、Googleにログインするアカウントを選択します。
+自動的にブラウザが起動するので（起動済みの場合はタブ追加）、Googleにログインするアカウントを選択します。
 ![image](/images/firebase_helloworld_hosting/firebase_helloworld_hosting_tutorial_222.png)
 
 説明画面が表示されるので「次へ」を押下します。
@@ -111,10 +110,10 @@ FirebaseCLIが要求するアクセスを求められるため「許可」を押
 以下の画面が表示されれば権限付与は完了です。
 ![image](/images/firebase_helloworld_hosting/firebase_helloworld_hosting_tutorial_225.png)
 
-設定画面に戻って次の手順を確認します。再びコマンド実行のためコマンドプロンプトを表示します。
+セットアップ画面に戻って次の手順を確認します。再びコマンド実行のためコマンドプロンプト画面に切り替えます。
 ![image](/images/firebase_helloworld_hosting/firebase_helloworld_hosting_tutorial_230.png)
 
-コマンドプロンプトで以下を実行します。処理続行を聞かれるのでエンターキーを押下します。（Yを入力してもOKです）
+以下を実行してホスティング用に初期化します。処理続行を聞かれるのでエンターキーを押下します。（Yを入力してもOKです）
 ```bash
 firebase init
 ```
@@ -141,7 +140,7 @@ GitHubとの連携について聞かれるので「N」を入力します。
 これで初期設定は完了です。
 ![image](/images/firebase_helloworld_hosting/firebase_helloworld_hosting_tutorial_238.png)
 
-指定したフォルダにいくつかのファイルが生成されていることを確認します。
+フォルダ内にファイルが生成されていることを確認します。
 ![image](/images/firebase_helloworld_hosting/firebase_helloworld_hosting_tutorial_239.png)
 
 publicフォルダにはHTMLが作成されているので表示して確認します。
@@ -150,18 +149,17 @@ publicフォルダにはHTMLが作成されているので表示して確認し�
 Firebase Hostingセットアップ完了のHTMLであることが確認できます。
 ![image](/images/firebase_helloworld_hosting/firebase_helloworld_hosting_tutorial_241.png)
 
-設定画面に戻って「次へ」を押下します。
+セットアップ画面に戻って「次へ」を押下します。
 ![image](/images/firebase_helloworld_hosting/firebase_helloworld_hosting_tutorial_230.png)
 
 ウェブアプリの名前を入力して「登録して続行」を押下します。
-ここで指定した名前は管理画面で使用されます。
 ![image](/images/firebase_helloworld_hosting/firebase_helloworld_hosting_tutorial_251.png)
 
 「Firebase SDKの追加」は「npmを使用する」のまま「次へ」を押下します。
-コマンドの実行が記載されていますが、このタイミングで実施する必要はありません。（実施しても問題ありません）
+コマンドの実行が記載されていますが、このタイミングで実行する必要はありません。（実行しても問題ありません）
 ![image](/images/firebase_helloworld_hosting/firebase_helloworld_hosting_tutorial_260.png)
 
-以下の内容が表示されます。再びコマンド実行のためコマンドプロンプトを表示します。
+以下の内容が表示されます。再びコマンド実行のためコマンドプロンプト画面に切り替えます。
 ![image](/images/firebase_helloworld_hosting/firebase_helloworld_hosting_tutorial_270.png)
 
 コマンドプロンプトで以下を実行してデプロイを開始します。
@@ -173,7 +171,7 @@ firebase deploy
 デプロイが完了する以下のような画面となります。
 ![image](/images/firebase_helloworld_hosting/firebase_helloworld_hosting_tutorial_272.png)
 
-設定画面に戻って「コンソールに進む」を押下します。
+セットアップ画面に戻って「コンソールに進む」を押下します。
 ![image](/images/firebase_helloworld_hosting/firebase_helloworld_hosting_tutorial_270.png)
 
 ダッシュボードでアプリがデプロイされていることを確認できます。
