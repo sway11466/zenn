@@ -2,8 +2,8 @@
 title: "Cloud Functions 最初の1歩 - Firebaseで遊ぼう！"
 emoji: "🐦"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["firebase", "初心者"]
-published: false
+topics: ["firebase", "cloudfunctions", "初心者"]
+published: true
 ---
 Firebaseを使って遊ぶ記事です。スクリーンショット満載でやった気になれます。
 
@@ -18,21 +18,20 @@ Cloud Functionsを作成してブラウザから呼び出します。
 ## 必要なもの
 - 作業時間：30分
 - 費用：無料
-- googleアカウント
 - firebaseプロジェクト
     準備できていない場合は [プロジェクトを作成してHTML公開](https://zenn.dev/sway/articles/firebase_helloworld_hosting)　を参考に構築してください。
 - クレジットカード
-    FirebaseでCloud Functionsを使用する場合は重量課金プランへの変更が必要となり、クレジットカードの登録が必要です。このチュートリアルの内容を実施しても課金対象となることはありません。詳細は「プロジェクトのアップグレード」章を参照ください。
+    FirebaseでCloud Functionsを使用する場合は、クレジットカードを登録して重量課金プランに変更する必要があります。費用が心配になるかもしれませんが、このチュートリアルの内容を実施しても課金対象となるレベルの処理は行いません。詳細は「プロジェクトのアップグレード」章を参照ください。
 
 ## 作業手順
 
 ### プロジェクトのアップグレード
 
-firebaseのプロジェクトは2種類のプランがあります。
+firebaseのプロジェクトは無料と従量課金の2種類のプランがあります。
 Cloud Functionsを使用するにはBlazeプランを使用する必要があります。
 
 - Sparkプラン
-   無料のプランです。無料なので安心感がありますね。
+   無料のプランです。無料なので安心感がありますが、Cloud Functionsは使えません。残念です。
 
 - blazeプラン
    従量課金のプランです。
@@ -100,7 +99,7 @@ firebase init
 ```
 ![image](/images/firebase_helloworld_functions/firebase_helloworld_functions_tutorial_306.png)
 
-準備が整っている場合は「Y」を入力します。
+プロジェクト作成を開始するために「Y」を入力します。
 ![image](/images/firebase_helloworld_functions/firebase_helloworld_functions_tutorial_307.png)
 
 生成するプロジェクトの種類を聞かれるため「Functions」を選択（スペースキー押下）してエンターキーを押下します。
