@@ -3,7 +3,7 @@ title: "休日判定ライブラリを作ってみた - TypeScript実用"
 emoji: "🪵"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["TypeScript", "holiday"]
-published: false
+published: true
 ---
 
 
@@ -91,7 +91,7 @@ npm install @sway11466/holiday-jp-npm
 このライブラリは以下のような目的で作成しました。
 
 1. 扱いやすい祝日判定ライブラリが欲しかった
-   npmに登録されている祝日判定ライブラリは必要な機能が不足していたり、使い勝手が古くて満足できるものがなかった。
+   npmに登録されている祝日判定ライブラリは欲しい機能が無かったり、使い勝手が古くて満足できるものがなかった。
 
 1. npmライブラリを作ってみたかった
    npmライブラリを作成して登録する流れを把握したかった。
