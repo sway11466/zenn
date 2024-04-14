@@ -5,6 +5,7 @@ type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["TypeScript", "holiday"]
 published: true
 ---
+TypeScript関連の他の記事は「[TypeScriptごった煮](https://zenn.dev/sway/articles/ts_index_list)」からどうぞ。
 
 
 ## 概要

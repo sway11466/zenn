@@ -1,5 +1,5 @@
 ---
-title: "TypeScript関連の記事"
+title: "TypeScriptごった煮"
 emoji: "📑"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["vue", "typescript", "electron", "quasarframework", "スクレイピング"]
