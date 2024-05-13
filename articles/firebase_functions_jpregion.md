@@ -3,15 +3,14 @@ title: "Cloud FunctionsをJPリージョンにデプロイする - Firebaseで�
 emoji: "🐦"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["firebase", "cloudfunctions", "初心者"]
-published: false
+published: true
 ---
 Firebaseを使って遊ぶ記事です。スクリーンショット満載でやった気になれます。
 
 ## 概要
-FirebaseのCloud FunctionsをJPリージョンにデプロイします。
+FirebaseのCloud Functions(v2)をJPリージョンにデプロイします。
 
 ## ゴール
-Cloud Functionsを作成してJPリージョンにデプロイします。
 少しわかりにくいですが、関数のhelloworldの下に「asia-northeast1」の表記があり、東京リージョンにデプロイされていることがわかります。
 ![image](/images/firebase_functions_jpregion/firebase_functions_jpregion_goal.png)
 
@@ -23,9 +22,9 @@ Cloud Functionsを作成してJPリージョンにデプロイします。
 
 ## 作業手順
 
-### プロジェクト配下のFunctionsをまとめて変更する
+### Functionsのデプロイ先はまとめてJPリージョンに設定する
 関数を追加するごとに日本リージョンを指定するのは面倒なので、すべての関数が日本リージョンにデプロイされるように設定します。
-firebaseのCloud Functionsでは、以下のようにsetGlobalOptionsを関数全体の使用リージョンを指定することができます。
+FirebaseのCloud Functionsでは、以下のようにsetGlobalOptionsを関数全体の使用リージョンを指定することができます。
 デプロイ先が東京の場合は「asia-northeast1」を、大阪の場合は「asia-northeast2」を指定します。
 
 ```typescript
@@ -73,19 +72,19 @@ export const helloWorld = onRequest((request, response) => {
 
 ![image](/images/firebase_functions_jpregion/firebase_functions_jpregion_001.png)
 
-デプロイして確認してみます。
+JPリージョンにデプロイします。
 ```bash
 firebase deploy
 ```
 ![image](/images/firebase_functions_jpregion/firebase_functions_jpregion_002.png)
 
-USリージョンの関数を削除してよいか確認されるので「y」を入力して先に進みます。
-デプロイ処理は数分～10分程度かかるので気長に待ちます。
+USリージョンのhelloworld関数を削除してよいか確認されるので「y」を入力します。
+その後、デプロイ処理は数分～10分程度かかるので気長に待ちます。
 ![image](/images/firebase_functions_jpregion/firebase_functions_jpregion_003.png)
 
-「Deploy complete!」と表示されればデプロイ完了です。ブラウザのダッシュボードに戻ってリロードすると、リージョンが「asia-northeast1」となっており東京リージョンにデプロイされたことが確認できます。
+「Deploy complete!」と表示されればデプロイ完了です。ダッシュボードに戻ってリロードすると、リージョンが「asia-northeast1」となっており東京リージョンにデプロイされたことが確認できます。
 ![image](/images/firebase_functions_jpregion/firebase_functions_jpregion_004.png)
 
 
 ## まとめ
-これで、Functionの追加時にリージョンを気にする必要がなくなりました。
+これで、関数のデプロイ先を日本リージョンにすることができました。

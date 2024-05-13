@@ -14,7 +14,7 @@ Firebaseを使って遊ぶ記事です。スクリーンショット満載でや
 1. Cloud Firestore
 
 # Cloud Functions for Firebase
-1. リージョン変更（v2）
+1. [Cloud FunctionsをJPリージョンにデプロイする](https://zenn.dev/sway/articles/firebase_functions_jpregion)
 1. ローカル実行
 
 # Firebase Functionsの実装例
