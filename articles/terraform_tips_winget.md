@@ -3,14 +3,13 @@ title: "wingetでterraformのインストール - Terraformのきほんと応用
 emoji: "🛴"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["terraform", "初心者", "winget", "install"]
-published: false
+published: true
 ---
 ていねいを心掛けたTerraform記事です。スクリーンショット満載でやった気になれます。
 Terraform関連の他の記事は「[Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)」からどうぞ。
 
 ## 概要
-私がterraformを使い始めたころはWindowsにスタンダードなパッケージマネージャーが存在していなかったのですが、現時点ではwingetというコマンドラインツールがスタンダードの地位を確立していると考えています。
-wingetでterraformをインストールするショートtipsです。
+Windowsのパッケージマネージャーとしてwingetというコマンドラインツールがスタンダードになりました。私がterraformを使い始めたころには無かったツールなので、wingetでterraformをインストールするショートtipsを書きました。
 
 ## ゴール
 wingetでterraformをインストールする。
@@ -51,6 +50,7 @@ terraform --version
 
 ## wingetを使うメリット
 terraformはzipを展開するだけで利用可能なので手動インストールでも手間は少ないのですが、以下の点がメリットとなります。
+- 環境変数にterraformコマンドへのパスを自動で追加してくれる
 - 環境構築手順がコマンド1行で済む
 - チーム内でのバージョン統一が楽
    たとえば、1.8系をインストールしたい場合は以下のように指定します。
