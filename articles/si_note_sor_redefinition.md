@@ -1,5 +1,5 @@
 ---
-title: "SORを再定義してみる - SI屋さんの雑記"
+title: "SoRを再定義してみる - SI屋さんの雑記"
 emoji: "🏭"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["SIer", "sor", "soe"]
