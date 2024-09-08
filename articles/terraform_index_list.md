@@ -16,7 +16,7 @@ Terraformといえばクラウドリソースの作成ですが、「Terraform�
 1. [モジュールの使い方](https://zenn.dev/sway/articles/terraform_biginner_modules)
 1. [mapとfor_eachで複数のオブジェクトを作成する](https://zenn.dev/sway/articles/terraform_biginner_multiple_object)
 1. [tfstateにふれてみよう](https://zenn.dev/sway/articles/terraform_biginner_tfstate)
-1. 作成済みのリソースをTerraform管理下に加える(鋭意作成中)
+1. [作成済みのリソースをTerraform管理下に加える](https://zenn.dev/sway/articles/terraform_biginner_import)
 1. 特定のリソースをTerraform管理下から除外ずる(鋭意作成中)
 1. ワークスペースの使い方(鋭意作成中)
 1. backendを動的に変更する(鋭意作成中)

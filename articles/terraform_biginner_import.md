@@ -3,7 +3,7 @@ title: "作成済みのリソースをTerraform管理下に加える - Terraform
 emoji: "🐣"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["terraform", "初心者"]
-published: false
+published: true
 ---
 ていねいを心掛けたTerraform記事です。スクリーンショット満載でやった気になれます。
 Terraformといえばクラウドリソースの作成ですが、この記事ではローカルPC上のリソース作成で済むように工夫しています。
@@ -48,18 +48,18 @@ flowchart TB
 ## importコマンドの構文
 
 importコマンドの構文は以下の通りです。
-インポート対象のオブジェクトに対応した定義をソース上に定義しておく必要があります。定義が存在しない場合はエラーとなります。
-また、インポート対処のオブジェクトを示す方法はプロバイダーのドキュメントを参照します。たとえばEC2なインスタンスIDです。（[awsプロバイダーのaws_instanceのimportの説明](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#import)）
+第１引数はソース上のリソース名です。このため、あらかじめソース上にリソース名を定義しておく必要があります。ソースに定義されていないリソース名にimportしようとするとエラーとなります。
+第２引数はimport対象となる既存のオブジェクトのID等を指定します。具体的な値は対象ごとにことなりプロバイダーのドキュメントを参照して調べます。たとえばEC2の場合はインスタンスIDです。（[awsプロバイダーのaws_instanceのimportの説明](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#import)）
 ```sh
-terraform import [ソース上のリソース名] [オブジェクトのID等]
+terraform import [ソース上のリソース名] [既存のオブジェクトのID等]
 ```
 
 ## importによるリソース追加の流れ
 
 既存のリソースをterraform管理下に加えるための代表的な流れは以下の通りです。
 1. ソースコードにリソースを定義する
-1. tfstateにimportする
-1. planで結果を確認する
+1. importを実行してtfstateを更新する
+1. planで差分が出ていないか確認する
 1. 実態とソースに差分があれば修正する
    1.の段階で実態と完全に一致するソースが書けていれば不要な手順です
 
@@ -126,7 +126,5 @@ terraform import [ソース上のリソース名] [オブジェクトのID等]
 この記事で作成したコードはgithub上に公開しています。
 @[card](https://github.com/sway11466/zenn/tree/main/sample_codes/terraform_biginner_import)
 
-# 次はこれをやろう
-1. ワークスペースの使い方(鋭意作成中)
 
 Terraform関連の他の記事は「[Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)」からどうぞ。
