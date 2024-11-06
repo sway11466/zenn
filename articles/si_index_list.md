@@ -9,6 +9,9 @@ published: true
 SI屋さんにしか通じない単語を説明なしに使うので素人は要注意です。
 いろいろな意見を欲しているので、つっこみは大歓迎です。
 
+# アジャイル
+1. [朝会で何を話すべきか](https://zenn.dev/sway/articles/agile_daily_scrum)
+
 
 # 雑記
 1. [そのコード化は本当に必要ですか？](https://zenn.dev/sway/articles/si_codenization)
