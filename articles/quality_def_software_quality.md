@@ -6,7 +6,7 @@ topics: ["品質"]
 published: true
 ---
 ソフトウェア品質について様々な観点から考える記事群です。
-品質関連の他の記事は「[ソフトウェア品質の探求](https://zenn.dev/sway/articles/)からどうぞ。
+品質関連の他の記事は「[ソフトウェア品質の探求](https://zenn.dev/sway/articles/)」からどうぞ。
 
 
 ## はじめに
