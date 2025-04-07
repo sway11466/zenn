@@ -6,7 +6,7 @@ topics: ["ソフトウェア品質", "JISX25010", "内部品質", "外部品質"
 published: true
 ---
 ソフトウェア品質について様々な観点から考える記事群です。
-品質関連の他の記事は「[ソフトウェア品質の探求](https://zenn.dev/sway/articles/)」からどうぞ。
+品質関連の他の記事は「[ソフトウェア品質の探求](https://zenn.dev/sway/articles/quality_index_list)」からどうぞ。
 
 
 ## はじめに
