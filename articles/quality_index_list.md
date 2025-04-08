@@ -2,7 +2,7 @@
 title: "ソフトウェア品質の探求"
 emoji: "📑"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["品質"]
+topics: ["ソフトウェア品質"]
 published: true
 ---
 品質の高いソフトウェアを作ることは難しい。
@@ -16,6 +16,8 @@ published: true
 
 ## 🎯 ソフトウェア品質用語集
 1. [ソフトウェア品質ってなに？](https://zenn.dev/sway/articles/quality_def_software_quality)
+1. [バグってなに？](https://zenn.dev/sway/articles/quality_def_bug)
+1. バグ関連の用語の整理
 
 
 ## テストに関する探究
