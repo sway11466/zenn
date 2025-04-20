@@ -62,3 +62,6 @@ Terraformで構築するAWSの実装例
 
 # 別の記事たち
 - [Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)
+- [ソフトウェア品質の探求](https://zenn.dev/sway/articles/quality_index_list)
+- [SI屋さんの雑記](https://zenn.dev/sway/articles/si_index_list)
+

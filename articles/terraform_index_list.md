@@ -59,3 +59,5 @@ terraformの書き方に関する小さなtipsをつづります。
 
 # 別の記事たち
 - [AWSをはじめからていねいに](https://zenn.dev/sway/articles/aws_index_list)
+- [ソフトウェア品質の探求](https://zenn.dev/sway/articles/quality_index_list)
+- [SI屋さんの雑記](https://zenn.dev/sway/articles/si_index_list)
