@@ -12,6 +12,8 @@ SI屋さんにしか通じない単語を説明なしに使うので素人は要
 # アジャイル
 1. [朝会で何を話すべきか](https://zenn.dev/sway/articles/agile_daily_scrum)
 
+# アーキ教室
+1. [ログ出力の考え方](https://zenn.dev/sway/articles/arch_logging)
 
 # 雑記
 1. [そのコード化は本当に必要ですか？](https://zenn.dev/sway/articles/si_codenization)
