@@ -9,16 +9,20 @@ published: true
 SI屋さんにしか通じない単語を説明なしに使うので素人は要注意です。
 いろいろな意見を欲しているので、つっこみは大歓迎です。
 
+
 # アジャイル
 1. [朝会で何を話すべきか](https://zenn.dev/sway/articles/agile_daily_scrum)
 
+
 # アーキ教室
 1. [ログ出力の考え方](https://zenn.dev/sway/articles/arch_logging)
+
 
 # 雑記
 1. [そのコード化は本当に必要ですか？](https://zenn.dev/sway/articles/si_codenization)
 1. [SORを再定義してみる](https://zenn.dev/sway/articles/si_note_sor_redefinition)
 1. [心理的安全性は"あなた"を快適にしない](https://zenn.dev/sway/articles/si_note_psychological_safety)
+1. [「技術的負債＝ゴミコード」という誤解](https://zenn.dev/sway/articles/si_note_technical_debt)
 
 
 # 別の記事たち
