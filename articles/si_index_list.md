@@ -23,6 +23,7 @@ SI屋さんにしか通じない単語を説明なしに使うので素人は要
 1. [SORを再定義してみる](https://zenn.dev/sway/articles/si_note_sor_redefinition)
 1. [心理的安全性は"あなた"を快適にしない](https://zenn.dev/sway/articles/si_note_psychological_safety)
 1. [「技術的負債＝ゴミコード」という誤解](https://zenn.dev/sway/articles/si_note_technical_debt)
+1. [技術的負債の分類学](https://zenn.dev/sway/articles/si_note_technical_debt_taxonomy)
 
 
 # 別の記事たち
