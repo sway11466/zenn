@@ -16,6 +16,7 @@ SI屋さんにしか通じない単語を説明なしに使うので素人は要
 
 # アーキ教室
 1. [ログ出力の考え方](https://zenn.dev/sway/articles/arch_logging)
+1. [データ構造の選び方](https://zenn.dev/sway/articles/arch_datastructure)
 
 
 # 雑記
