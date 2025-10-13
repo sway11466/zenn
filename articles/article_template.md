@@ -5,6 +5,7 @@ type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["tags"]
 published: false
 ---
+https://apps.timwhitlock.info/emoji/tables/unicode
 リード文。
 [記事の一覧](https://zenn.dev/sway/articles/)
 
