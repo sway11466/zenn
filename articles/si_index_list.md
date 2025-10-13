@@ -26,6 +26,7 @@ SI屋さんにしか通じない単語を説明なしに使うので素人は要
 1. [「技術的負債＝ゴミコード」という誤解](https://zenn.dev/sway/articles/si_note_technical_debt)
 1. [技術的負債の分類学](https://zenn.dev/sway/articles/si_note_technical_debt_taxonomy)
 1. [基幹システムとは何か？](https://zenn.dev/sway/articles/si_note_core_system)
+1. [SIerの未来は暗いのか？](https://zenn.dev/sway/articles/si_note_core_sier_elimination)
 
 
 ## 別の記事たち
