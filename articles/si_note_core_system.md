@@ -3,7 +3,7 @@ title: "基幹システムとは何か？ - SI屋さんの雑記"
 emoji: "🏭"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: ["sier", "基幹システム", "coresystem"]
-published: false
+published: true
 ---
 ベテランのSI屋さんが考えたことを書き残した雑記です。
 SI屋さんにしか通じない単語を説明なしに使うので素人は要注意です。
