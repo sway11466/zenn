@@ -18,12 +18,15 @@ published: true
 1. [ソフトウェア品質ってなに？](https://zenn.dev/sway/articles/quality_def_software_quality)
 1. [バグってなに？](https://zenn.dev/sway/articles/quality_def_bug)
 1. バグ関連の用語の整理
+1. テストとレビュー
 
 
-## テストに関する探究
+## 📊 品質やテストに関する論考
 1. [そのテストは何のため？](https://zenn.dev/sway/articles/quality_test_objectives)
+1. [バグ密度という指標が無駄なのは何故か？](https://zenn.dev/sway/articles/quality_bug_density)
 
 
 ## 私が執筆している別の記事群
 - [AWSをはじめからていねいに](https://zenn.dev/sway/articles/aws_index_list)
 - [Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)
+- [SI屋さんの雑記](https://zenn.dev/sway/articles/si_index_list)
