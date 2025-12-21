@@ -19,6 +19,8 @@ published: true
 1. [バグってなに？](https://zenn.dev/sway/articles/quality_def_bug)
 1. バグ関連の用語の整理
 1. テストとレビュー
+1. [「技術的負債＝ゴミコード」という誤解](https://zenn.dev/sway/articles/si_note_technical_debt)
+1. [技術的負債の分類学](https://zenn.dev/sway/articles/si_note_technical_debt_taxonomy)
 
 
 ## 📊 品質やテストに関する論考
