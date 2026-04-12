@@ -19,26 +19,29 @@ Claude Codeを使ってWebアプリを作り始めたら、これが想像以上
 
 https://tripcraft.fun
 
-![tripcraft.funのトップページ](/images/ai_product_tripcraft/top.png)
+![tripcraft.funのトップページ](/images/ai_product_tripcraft/top.webp)
 
 「やりたいこと」を出して、それを旅程に組み立てていく、というコンセプトです。
 ありがちな「決まった予定を入力するだけ」のアプリではなく「計画を立てる過程そのものを楽しむ」ためのアプリです。
 
 
-### 使い方と主な機能
+### 使い方
 
 1. 行先・日程などの基本情報で旅のプランを作成
 2. 招待リンクでメンバーを招待
 3. 「やりたいこと」を追加して、メンバーとリアクションやコメントで盛り上がる
 4. やりたいことを盛り込んだ旅程を作成
-5. その他特徴
-  - ログインなしでも使える（データはlocalStorageに保存）
-  - ログインすればメンバーを招待できる、ゲスト参加も可能
-  - オフラインも行けるはず（テスト甘いかも）
-  - 将来的にはAI機能も追加します
 
-![やりたいことの一覧](/images/ai_product_tripcraft/wish_items.png)
-![旅程](/images/ai_product_tripcraft/itinerary.png)
+![やりたいことの一覧](/images/ai_product_tripcraft/wish_items.webp)
+
+### その他特徴など
+- ログインなしでも使える（データはlocalStorageに保存）
+- ログインすればメンバーを招待できる、ゲスト参加も可能
+- オフラインも行けるはず（テスト甘いかも）
+- 将来的にはAI機能も追加します
+
+![旅程](/images/ai_product_tripcraft/itinerary.webp)
+
 
 
 ### 技術スタック
