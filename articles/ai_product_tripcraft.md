@@ -3,7 +3,7 @@ title: "AI開発が楽しすぎる - AI開発日記"
 emoji: "✈️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["claudecode", "ai"]
-published: false
+published: true
 ---
 
 最後の更新から気づけばだいぶ時間が空いてしまいました。
