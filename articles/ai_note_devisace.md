@@ -3,7 +3,7 @@ title: "結局AI開発は技術者が一番である - AI開発日記"
 emoji: "🤖"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: ["AI", "vibecoding", "ソフトウェア品質", "内部品質"]
-published: false
+published: true
 ---
 AIについて考えたり使った感想なんかを書き綴る記事群です。
 
