@@ -3,7 +3,7 @@ title: "やっぱり小物ツールをAIで作ると楽だわ - AI開発日記"
 emoji: "💤"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["claudecode", "ai", "windows", "python"]
-published: false
+published: true
 ---
 AIについて考えたり使った感想なんかを書き綴る記事群です。
 
@@ -109,4 +109,5 @@ Windows の標準機能では曜日や時間帯でスリープ設定を切り替
 
 AI開発で問われるのは、もうコーディング能力じゃないんだろうなと思います。「自分が何に困っているか」「それをどう解決するか」を言語化できるかどうか。今回のツールも、Windows のスリープに困っている自分を観察して要件を切り出せたから、1日で形になった感覚です。
 
-実際 AI にどんな材料を食わせたかは、リポジトリの `doc/` 配下にある [product.md](https://github.com/sway11466/SleepSwitcher/blob/main/doc/product.md) ・ [spec.md](https://github.com/sway11466/SleepSwitcher/blob/main/doc/spec.md) ・ [architecture.md](https://github.com/sway11466/SleepSwitcher/blob/main/doc/architecture.md) にそのまま残してあります。OSS にしているので、「自分でも小物ツールを作ってみたい」と思った人がいたら、ドキュメントの粒度感や書き方の参考にでも覗いてみてください。
+実際 AI にどんな材料を食わせたかは、リポジトリの `doc/` 配下にそのまま残してあります。OSS にしているので、「自分でも小物ツールを作ってみたい」と思った人がいたら、ドキュメントの粒度感や書き方の参考にでも覗いてみてください。
+https://github.com/sway11466/SleepSwitcher/tree/master/doc
