@@ -3,7 +3,7 @@ title: "麻雀アプリで掴んだ、AIに同じキャラを描かせる3つの
 emoji: "🀄"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["claudecode", "ai", "imagegen", "typescript"]
-published: false
+published: true
 ---
 AIについて考えたり使った感想なんかを書き綴る記事群です。
 [記事の一覧](https://zenn.dev/sway/articles/)
@@ -15,7 +15,7 @@ AIについて考えたり使った感想なんかを書き綴る記事群です
 
 ## 作ったもの：Mahjo
 
-麻雀の役をと点数の数え方を学習するためのアプリです。ブラウザだけで遊べます。
+麻雀の役と点数の数え方を学習するためのアプリです。ブラウザだけで遊べます。
 
 https://mahjo.academy/
 

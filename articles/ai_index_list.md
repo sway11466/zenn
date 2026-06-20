@@ -13,6 +13,8 @@ AIについて考えたり使った感想なんかを書き綴る記事群です
    [SleepSwitcher](https://github.com/sway11466/SleepSwitcher/releases/tag/v1.0.0) - PCのスリープ設定をスケジュール管理
 1. [AI開発が楽しすぎる](https://zenn.dev/sway/articles/ai_product_tripcraft)
    [TripCraft](https://tripcraft.fun) - 旅行計画を楽しもう
+1. [麻雀アプリで掴んだ、AIに同じキャラを描かせる3つのコツ](https://zenn.dev/sway/articles/ai_product_mahjo)
+   [Mahjo](https://mahjo.academy/) - 麻雀の役と点数を学ぶ
 
 
 ## AI開発考察
