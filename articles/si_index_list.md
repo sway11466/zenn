@@ -34,4 +34,7 @@ SI屋さんにしか通じない単語を説明なしに使うので素人は要
 ## 別の記事たち
 - [AWSをはじめからていねいに](https://zenn.dev/sway/articles/aws_index_list)
 - [Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)
+- [TypeScriptごった煮](https://zenn.dev/sway/articles/ts_index_list)
+- [Firebaseで遊ぼう！](https://zenn.dev/sway/articles/firebase_index_list)
 - [ソフトウェア品質の探求](https://zenn.dev/sway/articles/quality_index_list)
+- [AI開発日記](https://zenn.dev/sway/articles/ai_index_list)

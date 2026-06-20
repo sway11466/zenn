@@ -22,5 +22,7 @@ AIについて考えたり使った感想なんかを書き綴る記事群です
 ## 別の記事たち
 - [AWSをはじめからていねいに](https://zenn.dev/sway/articles/aws_index_list)
 - [Terraformのきほんと応用](https://zenn.dev/sway/articles/terraform_index_list)
+- [TypeScriptごった煮](https://zenn.dev/sway/articles/ts_index_list)
+- [Firebaseで遊ぼう！](https://zenn.dev/sway/articles/firebase_index_list)
 - [ソフトウェア品質の探求](https://zenn.dev/sway/articles/quality_index_list)
 - [SI屋さんの雑記](https://zenn.dev/sway/articles/si_index_list)
