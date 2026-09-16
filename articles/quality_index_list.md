@@ -11,7 +11,7 @@ published: true
 
 ## 📑 ソフトウェア品質とは
 1. [内部品質と外部品質](https://zenn.dev/sway/articles/quality_internal_external)
-1. 狩野モデル
+1. [狩野モデルはどのように実務に根ざしているのか](https://zenn.dev/sway/articles/quality_kano_model)
 
 
 ## 🎯 ソフトウェア品質用語集
