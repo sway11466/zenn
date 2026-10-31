@@ -14,6 +14,7 @@ SI屋さんにしか通じない単語を説明なしに使うので素人は要
 1. [朝会で何を話すべきか](https://zenn.dev/sway/articles/agile_daily_scrum)
 1. [心理的安全性は"あなた"を快適にしない](https://zenn.dev/sway/articles/si_note_psychological_safety)
 1. [ストーリーポイントを工数換算すべきではない理由](https://zenn.dev/sway/articles/agile_story_point_mistake)
+1. [WFとAgileが進め方を議論するとWFが圧勝する](https://zenn.dev/sway/articles/agile_wf_vs_agile_debate)
 
 
 ## アーキ教室
